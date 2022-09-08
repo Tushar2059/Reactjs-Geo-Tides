@@ -71,7 +71,7 @@ var [positionEarth,setPositionEarth]=useState([3,0,0]);
 var [positionMoon,setPositionMoon]=useState([positionEarth[0] +2 ,0,0]);
   const bindDrag = useDrag(({offset: [x,z]}) =>{
     const [,y,]=positionMoon;
-    
+    //setmoonText(false);
    // setPositionMoon([x / aspect, -y / aspect, z]);
     
     //if(x!=0 && z!=0 )
@@ -105,7 +105,7 @@ var [positionMoon,setPositionMoon]=useState([positionEarth[0] +2 ,0,0]);
       setPositionMoon([2.18218,0,0]);
       count=1;
       setCount(count);
-      setmoonText(false);
+      //setmoonText(false);
       
     }
     // else if((positionMoon[0].toFixed(1)>=-0.4 &&  positionMoon[0].toFixed(1)<=0.4 && positionMoon[2].toFixed(1)==-2.3) || (positionMoon[2].toFixed(1)>=-2.6 &&  positionMoon[2].toFixed(1)<=-2.0 && positionMoon[0].toFixed(1)==0))
@@ -360,11 +360,11 @@ useFrame(() => {
               {lastq && (<Text fontSize={0.5} position={[3, 0, -2.3]}>Last quarter </Text>)}
 
               {moonText && (
-                <Text fontSize={0.5} position={[7.9, 1.5, 0]}>Moon </Text>
+                <Text fontSize={0.5} position={ [7.9, 1.5, 0]}>Moon </Text>
               )} 
+                       {/* [positionMoon[0],positionMoon[1]+0.4,positionMoon[0]] */}
 
-
-              {/* {moonText && (
+              {/* {moonText && (           
               <mesh position={[7.9, 1, 0]} rotation-x={Math.PI} rotation-y={Math.PI }>
                 <planeGeometry args={[0.5, 0.6, 2]} />
                 <meshBasicMaterial map={ptrImage} color="#ff9933"/>

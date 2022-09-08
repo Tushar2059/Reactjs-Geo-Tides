@@ -36,6 +36,7 @@ const BackNextBar = ({
             src={back}
             alt="Logo"
           />
+         
         </Button>
       </div>
       <div
