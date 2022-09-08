@@ -10,6 +10,7 @@ import * as Instru from "./MajorComponents/Instruction"
 import { Button } from "@mui/material";
 import { fontFamily, fontSize } from "@mui/system";
 import { fontGrid } from "@mui/material/styles/cssUtils";
+import spring from "../Img/earth6.gif"
 
 
 const MainSpringNeap1 = ({instruction,changeNextFlag}) => {
@@ -108,6 +109,7 @@ const MainSpringNeap1 = ({instruction,changeNextFlag}) => {
 //     }
 //   };
 
+let [earth1, setEarth1] = useState(earth);
 
 let [msg, setMsg] = useState("Sun and earth ");
 let [harrowfull, setHarrowfull] = useState(false);
@@ -289,6 +291,7 @@ function dropFull(ev,id) {
     changeNextFlag(2);
     setMsg("Spring tides formed due to gravitional pull of moon an sun");
     setHarrowfull(true);
+    setEarth1(spring);
   }
   else 
   //alert("please place moon at correct position");
@@ -464,7 +467,7 @@ function dropFirst(ev,id)
           style={{
               maxHeight: "40%",
               maxWidth: "50%",
-              marginTop: "30%",
+              marginTop: "20%",
               marginLeft: "38%",
             }}
             draggable="true"
@@ -490,12 +493,12 @@ function dropFirst(ev,id)
               style={{
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "cover",
-                maxHeight: "100%",
-                width: "7rem",  
-             // height: "auto" 
+               // maxHeight: "100%",
+               // width: "7rem",  
+             // height: "17rem" 
                 // marginTop: "10%",
               }}
-              src={earth}
+              src={earth1}
               alt="Logo"
             />
           </div>
@@ -513,7 +516,7 @@ function dropFirst(ev,id)
           style={{
               maxHeight: "40%",
               maxWidth: "50%",
-              marginTop: "5%",
+              marginTop: "20%",
               marginLeft: "38%",
             }}
             draggable="true"
@@ -615,6 +618,11 @@ function dropFirst(ev,id)
         alert(hint) }}>Hint</Button> */}
       
     </div>
+
+);
+};
+
+export default MainSpringNeap1;
 //     <div style={{ height: "100%" }}>
 //       <div className="d-flex " style={{ height: "100%" }}>
 
@@ -731,7 +739,4 @@ function dropFirst(ev,id)
 //       </div>
       
 //     </div>
-  );
-};
 
-export default MainSpringNeap1;

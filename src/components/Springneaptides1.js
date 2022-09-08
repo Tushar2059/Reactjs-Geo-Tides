@@ -7,8 +7,12 @@ import backgroundImg from "../Img/backg.png";
 import * as Instru from "./MajorComponents/Instruction"
 import Feedback1 from './Feedback1'
 import MainSpringNeap1 from './MainSpringNeap1'
+import SprinneaptidesMidContent1 from './SprinneaptidesMidContent1'
 
 const Springneaptides1 = () => {
+  var [nextFlag,setNextFlag]=useState(0);
+
+  var [instr,setChangeInstruction]=useState(Instru.default());
   return (
     <div
     style={{
@@ -22,12 +26,12 @@ const Springneaptides1 = () => {
 
     <Middlecomp
       midheight="80%"
-      //midcontent={<MainSpringNeap1 flag={nextFlag} instruction={setChangeInstruction} changeNextFlag={flag=>setNextFlag(flag)}/>}
-      //feedback={<Feedback1 flag={nextFlag}/>}
-      midcontent={<MainSpringNeap1 />}
-      feedback={<Feedback1 />}
+      midcontent={<SprinneaptidesMidContent1 flag={nextFlag} instruction={setChangeInstruction} changeNextFlag={flag=>setNextFlag(flag)}/>}
+      feedback={<Feedback1 flag={nextFlag}/>}
+      //midcontent={<MainSpringNeap1 />}
+      //feedback={<Feedback1 />}
       toolvisible="hidden"
-      //value={nextFlag}
+      value={nextFlag}
      
     />
 
@@ -36,7 +40,9 @@ const Springneaptides1 = () => {
    {/* <Footercomp footheight="10%" instruction={Instru.default} changeNextFlag={flag=>setNextFlag(flag)}   instructionFoot={setChangeInstruction}/>
     */}
 
-    <Footercomp footheight="10%" instruction={Instru.default} />
+    {/* <Footercomp footheight="10%" instruction={Instru.default} /> */}
+    <Footercomp footheight="10%" instruction={instr} changeNextFlag={flag=>setNextFlag(flag)}   instructionFoot={setChangeInstruction}/>
+   
    
   </div>
   )

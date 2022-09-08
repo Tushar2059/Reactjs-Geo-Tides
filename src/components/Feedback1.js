@@ -39,7 +39,9 @@ const Feedback1 = (props) => {
     <div>
 
      {/* Sun ,Earth ,Moon image for reference for flag 0 (zero) */}
-      {props.flag == 0 && (
+      {/* {(props.flag == 0)  && ( */}
+        {/* {(localStorage.getItem("count")!="1")  && ( */}
+          {(props.flag == 0)  && (
         <div>
           <img
             className="img-fluid"
@@ -89,8 +91,9 @@ const Feedback1 = (props) => {
         </div>
       )}
 
-      {/* Moon image for dragging for flag 1 */}
-      {props.flag == 1 && (
+      {/* Moon image for dragging for flag 1  *****    */}
+      {/* {(localStorage.getItem("count1")=="1") && ( */}
+        { props.flag == 1 && (
         <div>
           <img
              className="img-fluid"
@@ -118,7 +121,11 @@ const Feedback1 = (props) => {
       {/* for Full Moon */}
       {props.flag==2 && (
         <>
-        <label>Full moon Spring tides? :</label>
+        <label>What do you observed? :</label><br></br>
+        <label>Spring tides :</label>
+        <Checkbox ></Checkbox> 
+        <br></br>
+        <label>Neap tide :</label>
         <Checkbox ></Checkbox> 
       </>
       )} 

@@ -16,7 +16,7 @@ const BackNextBar = ({
   return (
     <div className=" d-flex " style={{ height: "10%" }}>
       <div className="col-4 d-flex justify-content-end " style={{}}>
-        <Button
+        {/* <Button
           onClick={() => {
             navigate(-1);
           }}
@@ -37,7 +37,7 @@ const BackNextBar = ({
             alt="Logo"
           />
          
-        </Button>
+        </Button> */}
       </div>
       <div
         className=" col-4 d-flex justify-content-center align-items-center mt-4"
