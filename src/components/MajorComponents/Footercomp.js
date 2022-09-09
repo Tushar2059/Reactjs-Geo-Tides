@@ -17,12 +17,13 @@ const Footercomp = ({ footheight, instruction ,changeNextFlag,instructionFoot}) 
    {
       changeNextFlag(1);
       instructionFoot(Instru.Instruction_2());
-      //localStorage.setItem("count1",1);
-      navigate("/letusverify/spring-neap-tides");
-     //navigate("/letusverify/spring-neap-1");
+      localStorage.removeItem("dispImg");
+      localStorage.setItem("moonDrag",1);
+     // navigate("/letusverify/spring-neap-tides");
+     navigate("/letusverify/spring-neap-1");
     }
     
-     localStorage.clear();
+     //localStorage.clear();
   };
   
   const onNext = (e) => {

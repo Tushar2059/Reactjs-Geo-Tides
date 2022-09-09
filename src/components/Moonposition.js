@@ -36,7 +36,7 @@ const Moonposition = (props) => {
 
   var [count, setCount] = useState(0);
   const mon = useRef(); 
-
+  
   // const bindMoon = useDrag(({offset:[x,y,z]})=>{
   //   const [,,]=moonPos;
   //   setMoonPos([x/aspect,-y/aspect,z]);
@@ -239,6 +239,7 @@ useFrame(() => {
         //count=count+1;
        // setCount(count);
         localStorage.setItem("count",1);
+        
         props.instruction(Instru.Instruction_1());
         
       }

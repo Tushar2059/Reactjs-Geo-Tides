@@ -390,7 +390,8 @@ function dropFirst(ev,id)
     instruction(Instru.Instruction_6());
     changeNextFlag(5);
     setMsg("Neap tides formed due to gravitional pull of moon an sun");
-
+   
+    //localStorage.clear();
   }
  
   else 
