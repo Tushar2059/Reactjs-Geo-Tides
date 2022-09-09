@@ -16,16 +16,19 @@ const SprinneaptidesMidContent = ({flag,instruction,changeNextFlag}) => {
     <div className="" style={{ width:"100%" }}>
      
      <div className=' col-12  ' style={{height:"90%",backgroundImage:"url("+ stars +")",borderTopLeftRadius:"20px",borderTopRightRadius:"20px"}}>
-     {((flag)==0) &&   <Canvas id="three-canvas-container" >      
+     {/* {((flag)==0) &&   <Canvas id="three-canvas-container" >       */}
+     <Canvas id="three-canvas-container" >    
       <Suspense fallback={null}>
-        {((flag)==0) && <Moonposition flag1={flag} instruction={instruction}/>}
+        {/* {((flag)==0) && <Moonposition flag1={flag} instruction={instruction}/>} */}
+
+        <Moonposition flag1={flag} instruction={instruction}/>
        
         {console.log("value of next in sibling component => "+flag)}
       </Suspense>
-    </Canvas>  }
+    </Canvas>  
 
-    {(flag==1 || flag==2 || flag==3 || flag==4 || flag==5)
-      && (<MainSpringNeap1 instruction={instruction} changeNextFlag={changeNextFlag}/>)}
+    {/* {(flag==1 || flag==2 || flag==3 || flag==4 || flag==5)
+      && (<MainSpringNeap1 instruction={instruction} changeNextFlag={changeNextFlag}/>)} */}
     <ToastContainer></ToastContainer>
    
     </div>

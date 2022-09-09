@@ -8,11 +8,19 @@ import * as Instru from "./MajorComponents/Instruction"
 import Feedback1 from './Feedback1'
 import MainSpringNeap1 from './MainSpringNeap1'
 import SprinneaptidesMidContent1 from './SprinneaptidesMidContent1'
+import { useEffect } from 'react'
 
 const Springneaptides1 = () => {
   var [nextFlag,setNextFlag]=useState(0);
 
   var [instr,setChangeInstruction]=useState(Instru.default());
+  useEffect(()=>{
+    if(localStorage.getItem("count")==1)
+    {
+      setChangeInstruction(Instru.Instruction_2);
+    }
+  },[])
+
   return (
     <div
     style={{

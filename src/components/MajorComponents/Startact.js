@@ -22,6 +22,7 @@ const Startact = () => {
   };
 
   const onAgree = () => {
+    localStorage.clear();
     localStorage.setItem("dispImg",1);
     navigate("/letusverify/spring-neap-tides");
   };
