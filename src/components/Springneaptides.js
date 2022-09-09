@@ -6,6 +6,7 @@ import SprinneaptidesMidContent from './SprinneaptidesMidContent'
 import backgroundImg from "../Img/backg.png";
 import * as Instru from "./MajorComponents/Instruction"
 import Feedback1 from './Feedback1'
+import { borderRadius } from '@mui/system'
 
 const Springneaptides = () => {
   var [nextFlag,setNextFlag]=useState(0);
@@ -20,7 +21,7 @@ const Springneaptides = () => {
 
   return (
     
-    <div
+    <div  
     style={{
       height: "100vh",
       backgroundImage: "url(" + backgroundImg + ")",
@@ -43,6 +44,12 @@ const Springneaptides = () => {
           boxShadow: "0px 10px 5px rgba(0, 0, 0, 0.40)"}}></div> */}
    <Footercomp footheight="10%" instruction={instr} changeNextFlag={flag=>setNextFlag(flag)}   instructionFoot={setChangeInstruction}/>
    
+    {/* <div className='d-flex justify-content-center align-content-center' >
+      <div className='bg-light col-11  ' style={{height:"100%", borderRadius:"20px"}}>
+         lorem
+
+      </div>
+    </div> */}
   </div>
   )
 }

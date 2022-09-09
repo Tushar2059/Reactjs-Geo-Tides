@@ -57,17 +57,17 @@ const Rightsidemenu = () => {
         <Navbar key={expand} expand={expand} className="mb-3">
           <Container fluid className="">
             <Navbar.Brand href="#"></Navbar.Brand>
-            <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
+            <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`}  />
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-${expand}`}
               aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
               placement="end"
-              style={{ width: "125px", height: "400px", background: "#8bb7c5" }}
+              style={{ width: "125px", height: "300px", background: "#8bb7c5" }}
             >
               <div className="" style={{ height: "100%" }}>
                 <div
                   className=" d-flex justify-content-center align-items-center p-3"
-                  style={{ height: "25%" }}
+                  style={{ height: "33%" }}
                 >
                   <LightTooltip title="Theory" placement="left" arrow>
                     <Link to="/letusverify/sqtheory">
@@ -89,7 +89,7 @@ const Rightsidemenu = () => {
 
                 <div
                   className=" d-flex justify-content-center align-items-center p-3"
-                  style={{ height: "25%" }}
+                  style={{ height: "33%" }}
                 >
                   <LightTooltip title="Viva voce" placement="left" arrow>
                     <div onClick={openDialog}>
@@ -101,6 +101,7 @@ const Rightsidemenu = () => {
                           backgroundSize: "cover",
                           maxHeight: "100%",
                           maxWidth: "100%",
+                          cursor:"pointer"
                         }}
                         src={mcq}
                         alt="Logo"
@@ -108,7 +109,7 @@ const Rightsidemenu = () => {
                     </div>
                   </LightTooltip>
                 </div>
-
+{/* 
                 <div
                   className=" d-flex justify-content-center align-items-center p-3"
                   style={{ height: "25%" }}
@@ -129,11 +130,11 @@ const Rightsidemenu = () => {
                       ></motion.img>
                     </Link>
                   </LightTooltip>
-                </div>
+                </div> */}
 
                 <div
                   className=" d-flex justify-content-center align-items-center p-3"
-                  style={{ height: "25%" }}
+                  style={{ height: "34%" }}
                 >
                   <LightTooltip title="Help" placement="left" arrow>
                     <Link to="/letusverify/help">
@@ -145,6 +146,7 @@ const Rightsidemenu = () => {
                           backgroundSize: "cover",
                           maxHeight: "100%",
                           maxWidth: "100%",
+                          cursor:"pointer"
                         }}
                         src={help}
                         alt="Logo"

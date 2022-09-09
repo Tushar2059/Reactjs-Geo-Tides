@@ -1,20 +1,24 @@
 .questions{
-   
-    
     margin-left: 2rem;
     margin-right: 2rem;
    
+}
+
+.DisplayExplanationMssg{
+    font-size: 12px;
+    color: red;
 }
 
 .lifeline-container{
         display: flex;
         justify-content: space-between;
         font-size: larger;
+        padding: 0px;
         
 }
 
 .lifeline-icon{
-    color: green;
+    color: #28a745;
     cursor: pointer;
 }
 
@@ -29,25 +33,81 @@
 }
 
 .questionTitle{
-    font-size: 1.2rem;
-    margin-bottom: 3rem;
+    /*font-size: 1.2rem;
     line-height: 1.5;
     text-align: center;
+    width:100%;*/
+    
+    width: 100%;
+    float: left;
+    padding: 5px;
+    text-align: center;
+    top: 50%; 
+  
+}
+
+.question-container{
+    /*text-align: center;
+    justify-content: center;
+    align-content: center;
+    margin-bottom: 1rem auto;
+    display: inline-flex;
+    width: 100%;*/
+    padding: 0px;
 }
 
 .quizTitle{
     text-align: center;
+    margin: auto;
 }
 
 .options-container{
     display: inline-block;
     width: 50%;
-   text-align: center;
-    
+   text-align: center;  
+}
+
+.img-container{
+    /*text-align: left;
+    width: 20%;*/
+
+    width: 30%;
+    float: left;
+    padding: 5px;
 }
 
 .option {
-    background-color: rgba(75, 75, 177, 0.808);
+    background-color: #77c9d4;
+    /*border-radius: 15%;*/
+    border-radius: 25px;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 1rem auto;
+    padding: 1rem;
+    transition: 0.3s linear all;
+    text-align: center;
+    justify-content: center;    
+    width: 90%;
+}
+
+.option-with-img {
+    /*background-color: rgba(75, 75, 177, 0.808);*/
+    /*border-radius: 15%;*/
+    display: flex;
+    border-radius: 25px;
+    color: white;
+    cursor: pointer;
+    margin: 1rem auto;
+    padding: 1rem;
+    transition: 0.3s linear all;
+    text-align: center;
+    justify-content: center;
+    width: 40%;
+}
+
+.option .act {
+    background-color: blue;
     /*border-radius: 15%;*/
     border-radius: 25px;
     color: white;
@@ -61,6 +121,12 @@
 
 .option:hover{
     background-color: blue;
+}
+
+.optionText{
+    padding: 0 0;
+    margin: auto 1rem;
+    color: black;
 }
 
 .button-container{
@@ -79,38 +145,37 @@
     cursor: pointer;
     align-content: center;
     width: 100px;
-    border-radius: 25px;
+    border-radius: 15px;
     margin-right: 2rem;
     padding: 1rem 0.5rem;
 }
 
 .button-container button:first-child {
-    background-color: blue;
+    background-color: #007bff;
     box-shadow: gray;
     transition: 0.2s linear all;
 }
 
 .button-container button:first-child:hover {
-    background-color: rgb(16, 16, 71);
+    background-color: rgb(49, 49, 202);
 }
 
 .button-container button:nth-child(2) {
-    background-color: green;
+    background-color: #28a745;
     box-shadow: gray;
     transition: 0.2s linear all;
 }
 
 .button-container button:nth-child(2):hover {
-    background-color: rgb(14, 54, 14);
+    background-color: rgb(30, 71, 30);
 }
 
 .button-container button:last-child {
-    background-color: yellowgreen;
+    background-color: #007bff;
     box-shadow: gray;
     transition: 0.2s linear all;
 }
 
 .button-container button:last-child:hover {
-    background-color: rgb(35, 48, 11);
+    background-color: rgb(49, 49, 202);
 }
-

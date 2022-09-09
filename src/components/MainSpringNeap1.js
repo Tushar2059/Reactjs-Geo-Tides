@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import sun from "../Img/twodsun.jpg";
-import earth from "../Img/earth.png";
+//import sun from "../Img/sungif3.gif";
+import earth from "../Img/earthwithsea.png";
 import moon from "../Img/moon2d.jpg"
 import  stars2  from "../Img/stars3.jpg";
 import  stars1  from "../Img/stars1.jpg";
@@ -255,21 +256,20 @@ function drag4(ev) {
   
 }
 
-
+//drag start object
 function drag1(ev) {
  
  ev.dataTransfer.setData("id", ev.target.id);
  ev.dataTransfer.setData("src", ev.target.src);
  
 }
-
+//drag over object
 function allowDrop(ev) {
   ev.preventDefault();
 }
 
 
-
-
+//drop object
 function dropFull(ev,id) {
   
   var data = ev.dataTransfer.getData("id");
@@ -285,11 +285,16 @@ function dropFull(ev,id) {
 
     setPath1(src1);
     count=count+1;
-    setCount(count);
+   
     console.log("Count in drop Full 2 ="+count);
-    instruction(Instru.Instruction_3());
+   
     changeNextFlag(2);
-    setMsg("Spring tides formed due to gravitional pull of moon an sun");
+    setTimeout(()=>{
+       setMsg("Spring tides formed due to gravitional pull of moon an sun");
+       instruction(Instru.Instruction_3());
+       setCount(count);
+    },3500);
+    
     setHarrowfull(true);
     setEarth1(spring);
   }

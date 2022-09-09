@@ -15,12 +15,27 @@ const AItheory1 = () => {
       }}
     >
       <Headcomp />
+    
 
-      <Middlecomp
+      {/* <Middlecomp
         midheight="90%"
         midcontent={<AltheoryMidContent1 />}
         toolvisible="hidden"
-      />
+      /> */}
+      <div className="d-flex  justify-content-center align-content-center" style={{height:"90%"}}>
+        <div
+          className="col-11 bg-light d-flex  justify-content-center "
+          style={{
+            height: "95%",
+            borderRadius: "20px",
+            boxShadow: "0px 10px 5px rgba(0, 0, 0, 0.40)",
+          }}
+        >
+          {/* Theory */}
+          <AltheoryMidContent1/>
+        </div>
+      </div>
+      
     </div>
   );
 };

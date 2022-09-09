@@ -1,20 +1,24 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
-import BackNextBar from "../MajorComponents/BackNextBar";
+// import { useNavigate } from "react-router-dom";
+// import BackNextBar from "../MajorComponents/BackNextBar";
+import "../MajorComponents/Mid.css";
 
 const AltheoryMidContent1 = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
-  const onNext = (e) => {
-    navigate("/letusverify/rectheory");
-  };
+  // const onNext = (e) => {
+  //   navigate("/letusverify/rectheory");
+  // };
 
   return (
-    <div className="" style={{ height: "100%" }}>
-      <div className="d-flex align-items-center" style={{ height: "90%" }}>
-        <div className="" style={{ height: "90%", width: "93%" }}>
+    <div className="overflow-auto scrollbar-primary" style={{ height: "100%" }}>
+     
+        <div className="my-5" style={{ width: "93%" }}>
           <h6 className="">Objective</h6>
-          <p>To verify the algebraic identity (a + b)2= a2+ 2ab + b2</p>
+          <p>
+            To verify the algebraic identity (a - b)<sup>2</sup>= a<sup>2</sup>-
+            2ab + b<sup>2</sup>
+          </p>
           <h6>Algebraic Identity</h6>
           <ul>
             <li>
@@ -45,15 +49,28 @@ const AltheoryMidContent1 = () => {
             <li>The product of the length of each side itself.</li>
             <li> Formula : Area = side²</li>
           </ul>
-        </div>
-      </div>
 
-      <BackNextBar
+          <h6>Rectangle</h6>
+          <p>
+            rectangle is a quadrilateral with four right angles and opposite
+            sides are equal. The length of a rectangle is the size of the longer
+            side, whereas the breadth is the size of the shorter side
+          </p>
+          <p>Area of a Rectangle</p>
+          <ul>
+            <li>The product of its length and breadth</li>
+            <li>Formula : Area = length x breadth</li>
+          </ul>
+
+        </div>
+      
+
+      {/* <BackNextBar
         setForward={onNext}
         backvisible="visible"
         nextvisible="visible"
         submitvisible="hidden"
-      />
+      /> */}
     </div>
   );
 };
