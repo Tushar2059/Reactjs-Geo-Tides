@@ -267,12 +267,21 @@ const MainSpringNeap1 = ({ instruction, changeNextFlag }) => {
       setHarrowfull(true);
       setEarth1(spring);
     }
+    else if(id == 1  && ev.target.src == src1)
+    {
+       //alert("done");
+       setTextCollapse(true);
+    }
     //alert("please place moon at correct position");
     else {
       toast.error("please place moon at correct position", {
         position: "top-center",
         autoClose: 1700,
       });
+      // console.log("drop image id =>  ",ev.target.src);
+      // console.log("drag image id =>  ",src1);
+      // console.log("id and count  => "+ id +" , " +count);
+      
     }
   }
 
@@ -295,7 +304,14 @@ const MainSpringNeap1 = ({ instruction, changeNextFlag }) => {
       setHarrowfull(false);
       setTextCollapse(true);
       
-    } else {
+    } 
+    else if(id == 2  && ev.target.src == src2)
+    {
+       //alert("done");
+       setTextCollapse(true);
+    }
+
+    else {
       toast.error("please place moon at correct position", {
         position: "top-center",
         autoClose: 1700,
@@ -320,7 +336,14 @@ const MainSpringNeap1 = ({ instruction, changeNextFlag }) => {
       changeNextFlag(4);
       setMsg("Spring tides formed due to gravitional pull of moon an sun");
       setTextCollapse(true);
-    } else {
+    } 
+    else if(id == 3  && ev.target.src == src3)
+    {
+       //alert("done");
+       setTextCollapse(true);
+    }
+    
+    else {
       toast.error("please place moon at correct position", {
         position: "top-center",
         autoClose: 1700,
@@ -348,7 +371,14 @@ const MainSpringNeap1 = ({ instruction, changeNextFlag }) => {
       setMsg("Neap tides formed due to gravitional pull of moon an sun");
       setTextCollapse(true);
       //localStorage.clear();
-    } else {
+    }
+    else if(id == 4  && ev.target.src == src4)
+    {
+       //alert("done");
+       setTextCollapse(true);
+    }
+    
+    else {
       toast.error("please place moon at correct position", {
         position: "top-center",
         autoClose: 1700,
@@ -555,7 +585,7 @@ const MainSpringNeap1 = ({ instruction, changeNextFlag }) => {
         </Collapse>
       </div> */}
        <div className="d-flex justify-content-center align-content-center">
-      <Collapse in={textCollapse} dimension="height">
+      <Collapse in={textCollapse} dimension="height" >
           <div id="example-collapse-text">
             <Card className="alert alert-success fw-bold" style={{height:"65%",fontFamily:"arial",fontSize:"1.2vw"}}>
               {msg}

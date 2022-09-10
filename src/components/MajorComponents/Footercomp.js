@@ -1,4 +1,6 @@
 import React from "react";
+import { useEffect } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Instructionimg from "../../Img/Instruction.png";
 import BackNextBar from "./BackNextBar";
@@ -8,20 +10,32 @@ import * as Instru from "./Instruction"
 
 const Footercomp = ({ footheight, instruction ,changeNextFlag,instructionFoot}) => {
   const navigate = useNavigate();
+  let [nextButton, setNextButton] = useState(false);
 
+
+  useEffect(()=>{
+   if(localStorage.getItem("moonDrag")=="1")
+   {
+    setNextButton(true);
+   }
+  },[]);
   const submitoperation = () => {
     console.log("hello click");
-    
+   
     if(localStorage.getItem("count")=="1")
     //if(true)
    {
+    
       changeNextFlag(1);
       instructionFoot(Instru.Instruction_2());
       localStorage.removeItem("dispImg");
       localStorage.setItem("moonDrag",1);
+     // setNextButton(true); // next button disabled
      // navigate("/letusverify/spring-neap-tides");
      navigate("/letusverify/spring-neap-1");
+    
     }
+   
     
      //localStorage.clear();
   };
@@ -64,6 +78,7 @@ const Footercomp = ({ footheight, instruction ,changeNextFlag,instructionFoot}) 
        backvisible="visible"
        nextvisible="visible"
        submitvisible="visible"
+       nextButtonDisplay={nextButton}
      />
       </div>
     </div>

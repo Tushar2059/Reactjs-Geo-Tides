@@ -10,6 +10,7 @@ const BackNextBar = ({
   backvisible,
   nextvisible,
   submitvisible,
+  nextButtonDisplay
 }) => {
   const navigate = useNavigate();
 
@@ -49,9 +50,13 @@ const BackNextBar = ({
           style={{
             visibility: `${submitvisible}`,
           }}
-        >
+          disabled={nextButtonDisplay}
+          >
           Next
         </Button>
+
+
+
       </div>
       <div className=" col-4 " style={{}}>
         <Button
