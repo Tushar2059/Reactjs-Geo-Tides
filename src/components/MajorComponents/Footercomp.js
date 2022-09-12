@@ -73,7 +73,7 @@ const Footercomp = ({ footheight, instruction ,changeNextFlag,instructionFoot}) 
       >
           <BackNextBar
        
-       setForward={onNext}
+      // setForward={onNext}
        clickSubmit={submitoperation}
        backvisible="visible"
        nextvisible="visible"

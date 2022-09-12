@@ -105,7 +105,7 @@ const MainSpringNeap1 = ({ instruction, changeNextFlag }) => {
   let [textCollapse, setTextCollapse] = useState(false);
   let [earth1, setEarth1] = useState(earth);
 
-  let [msg, setMsg] = useState("Sun and earth ");
+  let [msg, setMsg] = useState("");
   let [harrowfull, setHarrowfull] = useState(false);
 
   let [hint, setHint] = useState(stars2);
@@ -228,6 +228,7 @@ const MainSpringNeap1 = ({ instruction, changeNextFlag }) => {
   function drag1(ev) {
     ev.dataTransfer.setData("id", ev.target.id);
     ev.dataTransfer.setData("src", ev.target.src);
+    setTextCollapse(true);
     
   }
   //drag over object
