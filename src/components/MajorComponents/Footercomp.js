@@ -46,7 +46,7 @@ const Footercomp = ({ footheight, instruction ,changeNextFlag,instructionFoot}) 
   };
   return (
     <div
-      className="d-flex justify-content-around"
+      className=" d-flex justify-content-around"
       style={{ height: `${footheight}` }}
     >
       <div

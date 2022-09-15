@@ -30,36 +30,10 @@ const BackNextBar = ({
   }
 
   return (
-    <div className=" d-flex  " style={{ height: "10%" }}>
-      <div className="col-4  d-flex justify-content-end " style={{}}>
-        {/* <Button
-          onClick={() => {
-            navigate(-1);
-          }}
-          style={{
-            height: "100%",
-            visibility: `${backvisible}`,
-          }}
-        >
-        
-          <img
-            style={{
-              backgroundRepeat: "no-repeat",
-              backgroundSize: "cover",
-              maxHeight: "200%",
-              maxWidth: "200%",
-            }}
-            src={back}
-            alt="Logo"
-          />
-         
-        </Button> */}
-      </div>
-      <div
-        className=" col-4  d-flex justify-content-center align-items-center mt-4"
-        style={{}}
-      >
-       <Button
+
+    <div className="d-flex bg-succes" style={{height:"100%"}}>
+     <div className="col-6 d-flex justify-content-center align-items-center" style={{height:"100%"}}> 
+     <Button
           //variant="contained"
           onClick={goBack}
           style={{
@@ -72,16 +46,18 @@ const BackNextBar = ({
             style={{
               backgroundRepeat: "no-repeat",
               backgroundSize: "cover",
-              maxHeight: "130%",
-              maxWidth: "130%",
-              marginTop:"20%"
+              maxHeight: "50%",
+              maxWidth: "50%",
+              //marginTop:"5%"
             }}
             src={back}
             alt="Logo"
           />
         </Button>
-      
-      <Button
+</div>
+     <div className="col-6" style={{height:"100%"}}>
+
+     <Button
           //variant="contained"
           onClick={clickSubmit}
           style={{
@@ -94,50 +70,25 @@ const BackNextBar = ({
             style={{
               backgroundRepeat: "no-repeat",
               backgroundSize: "cover",
-              maxHeight: "130%",
-              maxWidth: "130%",
-              marginTop:"20%"
+              maxHeight: "50%",
+              maxWidth: "50%",
+             // marginTop:"5%"
+             
             }}
             src={next}
             alt="Logo"
           />
         </Button>
-        {/* <Button
-          variant="contained"
-          onClick={clickSubmit}
-          style={{
-            visibility: `${submitvisible}`,
-          }}
-          disabled={nextButtonDisplay}
-          >
-          Next
-        </Button> */}
-
-        
-
-
-
-      </div>
-      <div className=" col-4 " style={{}}>
-        {/* <Button
-          style={{ height: "100%", visibility: `${nextvisible}` }}
-          onClick={setForward}
-        >
-          <img
-            className=""
-            style={{
-              backgroundRepeat: "no-repeat",
-              backgroundSize: "cover",
-              maxHeight: "200%",
-              maxWidth: "200%",
-            }}
-            src={next}
-            alt="Logo"
-          />
-        </Button> */}
-      </div>
-    </div>
+     </div>
+          
+   </div>
+    
   );
 };
 
 export default BackNextBar;
+
+
+
+
+
