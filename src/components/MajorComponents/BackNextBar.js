@@ -74,6 +74,7 @@ const BackNextBar = ({
               backgroundSize: "cover",
               maxHeight: "130%",
               maxWidth: "130%",
+              marginTop:"20%"
             }}
             src={back}
             alt="Logo"
@@ -95,6 +96,7 @@ const BackNextBar = ({
               backgroundSize: "cover",
               maxHeight: "130%",
               maxWidth: "130%",
+              marginTop:"20%"
             }}
             src={next}
             alt="Logo"

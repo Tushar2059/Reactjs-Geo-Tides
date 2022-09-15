@@ -1,5 +1,5 @@
 import { Checkbox } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import Draggable from "react-draggable";
 //import moon from "../Img/moon2d.jpg";
 //import sun from "../Img/twodsun.jpg";
@@ -9,30 +9,75 @@ import moon from "../Img/moonwhite1.jpg";
 import sun from "../Img/sunwhite.jpg";
 import earth from "../Img/earthwhite.jpg";
 import moonDrag from "../Img/moon2d.jpg"
+import { Button, Card, Collapse, Fade, Form } from "react-bootstrap";
+import { toast } from "react-toastify";
+import * as Instru from "./MajorComponents/Instruction";
 
 const Feedback1 = (props) => {
+  let [flag1, setFlag1] = useState(false);
+  let [flag2, setFlag2] = useState(false);
+  let [flag3, setFlag3] = useState(false);
+  let [flag4, setFlag4] = useState(false);
   var cursorX = 0;
   var cursorY = 0;
-  function handleChange(e) {
-    cursorX = e.pageX;
-    cursorY = e.pageY;
-    console.log("In feedback cursorX : " + cursorX);
-    console.log("In feedback cursorY : " + cursorY);
-  }
+  // function handleChange(e) {
+  //   cursorX = e.pageX;
+  //   cursorY = e.pageY;
+  //   console.log("In feedback cursorX : " + cursorX);
+  //   console.log("In feedback cursorY : " + cursorY);
+  // }
 
   //for document
+  
+  
   var cursorXd;
   var cursorYd;
-  document.onclick = function (e) {
-    cursorXd = e.pageX;
-    cursorYd = e.pageY;
-    console.log("In document cursorXd : " + cursorXd);
-    console.log("In document cursorXy : " + cursorYd);
-  };
+  // document.onclick = function (e) {
+  //   cursorXd = e.pageX;
+  //   cursorYd = e.pageY;
+  //   console.log("In document cursorXd : " + cursorXd);
+  //   console.log("In document cursorXy : " + cursorYd);
+  // };
 
   function drag(ev) {
     ev.dataTransfer.setData("id", ev.target.id);
     ev.dataTransfer.setData("src", ev.target.src);
+  }
+
+  const onClickSPringFull = ()=>
+  {
+    setFlag1(true);
+    toast.error("You are wrong", {
+      position: "top-center",
+      autoClose: 1700,
+    });
+  }
+
+  const onClickNeapLast = ()=>
+  {
+    setFlag2(true);
+    toast.error("You are wrong", {
+      position: "top-center",
+      autoClose: 1700,
+    });
+  }
+
+  const onClickSPringNew = ()=>
+  {
+    setFlag3(true);
+    toast.error("You are wrong", {
+      position: "top-center",
+      autoClose: 1700,
+    });
+  }
+
+  const onClickNeapFirst = ()=>
+  {
+    setFlag4(true);
+    toast.error("You are wrong", {
+      position: "top-center",
+      autoClose: 1700,
+    });
   }
 
   return (
@@ -47,9 +92,9 @@ const Feedback1 = (props) => {
             className="img-fluid"
             style={{
               maxHeight: "100%",
-              maxWidth: "50%",
-              marginTop: "10%",
-              marginLeft: "25%",
+              maxWidth: "70%",
+              marginTop: "1%",
+              marginLeft: "5%",
               //width: "9rem",
             }}
             src={sun}
@@ -61,9 +106,9 @@ const Feedback1 = (props) => {
             className="img-fluid"
             style={{
               maxHeight: "100%",
-              maxWidth: "50%",
+              maxWidth: "55%",
               marginTop: "10%",
-              marginLeft: "25%",
+              marginLeft: "15%",
               //width: "9rem",
             }}
             src={earth}
@@ -75,9 +120,9 @@ const Feedback1 = (props) => {
           <img
             className="img-fluid"
             style={{
-              maxHeight: "100%",
-              maxWidth: "50%",
-              marginTop: "10%",
+              maxHeight: "80%",
+              maxWidth: "35%",
+              marginTop: "15%",
               marginLeft: "25%",
               width: "7rem",
               height:"6rem"
@@ -95,6 +140,8 @@ const Feedback1 = (props) => {
       {/* {(localStorage.getItem("count1")=="1") && ( */}
         {/* { props.flag == 1 && ( */}
          {(localStorage.getItem("moonDrag")=="1") && (localStorage.getItem("count")=="1") && (
+       
+       
         <div>
         {/* {()=>{
           localStorage.removeItem("moonDrag")
@@ -119,7 +166,7 @@ const Feedback1 = (props) => {
             }}
             src={moonDrag}
             alt="Logo"
-            onClick={handleChange}
+            //onClick={handleChange}
           />
         </div>
       )}
@@ -128,21 +175,84 @@ const Feedback1 = (props) => {
      {/* Checkboxes for questions */}
       {/* for Full Moon */}
       {props.flag==2 && (
-        <>
-        <label>What do you observed? :</label><br></br>
-        <label>Spring tides :</label>
-        <Checkbox ></Checkbox> 
-        <br></br>
-        <label>Neap tide :</label>
-        <Checkbox ></Checkbox> 
-      </>
+        <div >
+        <p className="text-center fw-bold">What do you observed? :</p>
+        
+        <Form>
+      {['radio'].map((type) => (
+        <div key={`inline-${type}`} className=" mb-3">
+          <Form.Check
+            inline
+            label="spring tides"
+            name="group1"
+            type={type}
+            id={`inline-spring-${type}-1`}
+            onClick={(e)=>{
+              props.changeValidation(1);
+              console.log(e.target.id)
+              //instruction(Instru.Instruction_3());
+              props.instruction(Instru.Instruction_3());
+              toast.success("You are correct123", {
+        position: "top-center",
+        autoClose: 1700,
+      });}}
+          />
+          <Form.Check
+            inline
+            label="Neap tide"
+            name="group1"
+            type={type}
+            id={`inline-neap-${type}-2`}
+            onClick={onClickSPringFull}
+          />
+          <br></br> <br></br> 
+          {flag1 && (
+           <p>Spring tides full moon </p>
+          )}
+            
+        </div>
+      ))}
+    </Form>
+      </div>
       )} 
 
       {/* for last quarter Moon */}
       {props.flag==3 && (
         <>
+        <p className="text-center fw-bold">What do you observed? :</p>
         <label>Last quarter Moon Neap tide? :</label>
-        <Checkbox ></Checkbox> 
+        <Form>
+      {['radio'].map((type) => (
+        <div key={`inline-${type}`} className=" mb-3">
+          <Form.Check
+            inline
+            label="spring tides"
+            name="group1"
+            type={type}
+            id={`inline-spring-${type}-1`}
+            onClick={onClickNeapLast}
+            
+          />
+          <Form.Check
+            inline
+            label="Neap tide"
+            name="group1"
+            type={type}
+            id={`inline-neap-${type}-2`}
+            onClick={(e)=>{
+              props.changeValidation(2);
+              props.instruction(Instru.Instruction_4());
+              console.log(e.target.id)
+              toast.success("You are correct", {
+        position: "top-center",
+        autoClose: 1700,
+      });}}
+          />
+          <br></br> <br></br> 
+          {flag2 && (<p>Neap tide last quarter moon </p>)}
+        </div>
+      ))}
+    </Form>
       </>
       )} 
 
@@ -150,7 +260,37 @@ const Feedback1 = (props) => {
       {props.flag==4 && (
         <>
         <label>New moon Spring tides? :</label>
-        <Checkbox ></Checkbox> 
+        <Form>
+      {['radio'].map((type) => (
+        <div key={`inline-${type}`} className=" mb-3">
+          <Form.Check
+            inline
+            label="spring tides"
+            name="group1"
+            type={type}
+            id={`inline-spring-${type}-1`}
+            onClick={(e)=>{
+              props.changeValidation(3);
+              props.instruction(Instru.Instruction_5());
+              console.log(e.target.id)
+              toast.success("You are correct", {
+        position: "top-center",
+        autoClose: 1700,
+      });}}
+          />
+          <Form.Check
+            inline
+            label="Neap tide"
+            name="group1"
+            type={type}
+            id={`inline-neap-${type}-2`}
+            onClick={onClickSPringNew}
+          />
+          <br></br> <br></br> 
+          {flag3 && (<p>Spring tides New moon </p>)}
+        </div>
+      ))}
+    </Form>
       </>
       )} 
 
@@ -158,9 +298,42 @@ const Feedback1 = (props) => {
       {props.flag==5 && (
         <>
         <label>first quarter Moon Neap tide? :</label>
-        <Checkbox ></Checkbox> 
+        <Form>
+      {['radio'].map((type) => (
+        <div key={`inline-${type}`} className=" mb-3">
+          <Form.Check
+            inline
+            label="spring tides"
+            name="group1"
+            type={type}
+            id={`inline-spring-${type}-1`}
+            onClick={onClickNeapFirst}
+            
+          />
+          <Form.Check
+            inline
+            label="Neap tide"
+            name="group1"
+            type={type}
+            id={`inline-neap-${type}-2`}
+            onClick={(e)=>{
+              props.changeValidation(2);
+              props.instruction(Instru.Instruction_6());
+              console.log(e.target.id)
+              toast.success("You are correct", {
+        position: "top-center",
+        autoClose: 1700,
+      });}}
+          />
+          <br></br> <br></br> 
+          {flag4 && (<p>Neap tide first quarter moon </p>)}
+        </div>
+      ))}
+    </Form>
       </>
       )} 
+
+      
 
 
     </div>

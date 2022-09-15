@@ -14,7 +14,7 @@ import { fontGrid } from "@mui/material/styles/cssUtils";
 import spring from "../Img/earth6.gif";
 import { Card, Collapse, Fade } from "react-bootstrap";
 
-const MainSpringNeap1 = ({ instruction, changeNextFlag }) => {
+const MainSpringNeap1 = ({ instruction, changeNextFlag,validation }) => {
   //   let [count, setCount] = useState(0);
   //   const [img_one, setImgOne] = useState(stars2);
   //     const [img_two, setImgTwo] = useState(stars2);
@@ -239,11 +239,12 @@ const MainSpringNeap1 = ({ instruction, changeNextFlag }) => {
 
   //drop object
   function dropFull(ev, id) {
+   
     var data = ev.dataTransfer.getData("id");
     var src1 = ev.dataTransfer.getData("src");
     //document.getElementById(data).style.display="none"
     console.log("Count in drop Full 1 = " + count);
-    if (id == 1 && count == 1 && ev.target.src != src1) {
+    if (id == 1 && count == 1 && ev.target.src != src1 && validation==0) {
       //alert("in if drop full");
       // alert()
       document.getElementById(data).style.display = "none";
@@ -257,8 +258,8 @@ const MainSpringNeap1 = ({ instruction, changeNextFlag }) => {
       changeNextFlag(2);
       setTimeout(() => {
         setTextCollapse(!textCollapse);
-        setMsg("Spring tides formed due to gravitional pull of moon an sun");
-        instruction(Instru.Instruction_3());
+        setMsg("Tides formed due to gravitional pull of moon and sun");
+        instruction(Instru.Instruction_33());
         setCount(count);
         // setTimeout(() => {
         //   setTextCollapse(!textCollapse);
@@ -271,10 +272,12 @@ const MainSpringNeap1 = ({ instruction, changeNextFlag }) => {
     else if(id == 1  && ev.target.src == src1)
     {
        //alert("done");
+
        setTextCollapse(true);
     }
     //alert("please place moon at correct position");
     else {
+     
       toast.error("please place moon at correct position", {
         position: "top-center",
         autoClose: 1700,
@@ -292,16 +295,18 @@ const MainSpringNeap1 = ({ instruction, changeNextFlag }) => {
     //document.getElementById(data).style.display="none"
 
     console.log("Count in drop Last 1 =" + count);
-    if (id == 2 && count == 2) {
+    if (id == 2 && count == 2 && validation==1) {
       document.getElementById(data).style.display = "none";
       setPath2(src2);
       console.log("in last " + src2);
       count = count + 1;
       setCount(count);
       console.log("Count in drop Last 2 =" + count);
-      instruction(Instru.Instruction_4());
+      //instruction(Instru.Instruction_4());
       changeNextFlag(3);
-      setMsg("Neap tides formed due to gravitional pull of moon an sun");
+
+      instruction(Instru.Instruction_33());
+      setMsg("Tides formed due to gravitional pull of moon and sun");
       setHarrowfull(false);
       setTextCollapse(true);
       
@@ -311,12 +316,21 @@ const MainSpringNeap1 = ({ instruction, changeNextFlag }) => {
        //alert("done");
        setTextCollapse(true);
     }
+    else if(validation!=1 && ev.target.src != src2 && validation==0)
+    {
+      //alert(validation)
+      // toast.error("Please select the correct option", {
+      //   position: "top-center",
+      //   //autoClose: 1700,
+      // })
+      setTextCollapse(true);
+    }
 
     else {
-      toast.error("please place moon at correct position", {
-        position: "top-center",
-        autoClose: 1700,
-      });
+      // toast.error("please place moon at correct position", {
+      //   position: "top-center",
+      //   autoClose: 1700,
+      // });
     }
   }
 
@@ -326,16 +340,17 @@ const MainSpringNeap1 = ({ instruction, changeNextFlag }) => {
     //document.getElementById(data).style.display="none"
 
     console.log("Count in drop Last 1 =" + count);
-    if (id == 3 && count == 3) {
+    if (id == 3 && count == 3 && validation==2) {
       document.getElementById(data).style.display = "none";
       setPath3(src3);
       console.log("in last " + src3);
       count = count + 1;
       setCount(count);
       console.log("Count in drop Last 2 =" + count);
-      instruction(Instru.Instruction_5());
+      //instruction(Instru.Instruction_5());
       changeNextFlag(4);
-      setMsg("Spring tides formed due to gravitional pull of moon an sun");
+      instruction(Instru.Instruction_33());
+      setMsg(" Tides formed due to gravitional pull of moon and sun");
       setTextCollapse(true);
     } 
     else if(id == 3  && ev.target.src == src3)
@@ -343,12 +358,21 @@ const MainSpringNeap1 = ({ instruction, changeNextFlag }) => {
        //alert("done");
        setTextCollapse(true);
     }
+    else if(validation!=2)
+    {
+     // alert(validation)
+      // toast.success("Please select the correct option", {
+      //   position: "top-center",
+      //   //autoClose: 1700,
+      // })
+      setTextCollapse(true);
+    }
     
     else {
-      toast.error("please place moon at correct position", {
-        position: "top-center",
-        autoClose: 1700,
-      });
+      // toast.error("please place moon at correct position", {
+      //   position: "top-center",
+      //   autoClose: 1700,
+      // });
     }
   }
 
@@ -359,7 +383,7 @@ const MainSpringNeap1 = ({ instruction, changeNextFlag }) => {
 
     console.log("abcdefgh" + stars2);
     console.log("Count in drop Last 1 =" + count);
-    if (id == 4 && count == 4) {
+    if (id == 4 && count == 4 && validation==3) {
       document.getElementById(data).style.display = "none";
       setPath4(src4);
       console.log("in last " + src4);
@@ -367,9 +391,10 @@ const MainSpringNeap1 = ({ instruction, changeNextFlag }) => {
       count = count + 1;
       setCount(count);
       console.log("Count in drop Last 2 =" + count);
-      instruction(Instru.Instruction_6());
+     // instruction(Instru.Instruction_6());
       changeNextFlag(5);
-      setMsg("Neap tides formed due to gravitional pull of moon an sun");
+      instruction(Instru.Instruction_33());
+      setMsg("Tides formed due to gravitional pull of moon and sun");
       setTextCollapse(true);
       //localStorage.clear();
     }
@@ -378,12 +403,20 @@ const MainSpringNeap1 = ({ instruction, changeNextFlag }) => {
        //alert("done");
        setTextCollapse(true);
     }
+    else if(validation!=3)
+    {
+      // toast.success("Please select the correct option", {
+      //   position: "top-center",
+      //   //autoClose: 1700,
+      // })
+      setTextCollapse(true);
+    }
     
     else {
-      toast.error("please place moon at correct position", {
-        position: "top-center",
-        autoClose: 1700,
-      });
+      // toast.error("please place moon at correct position", {
+      //   position: "top-center",
+      //   autoClose: 1700,
+      // });
     }
   }
 

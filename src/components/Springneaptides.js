@@ -58,6 +58,7 @@ const Springneaptides = () => {
           className="bg-light col-9  "
           style={{
             height: "100%",
+            //width:"80%",
             borderRadius: "20px",
             boxShadow: "0px 10px 5px rgba(0, 0, 0, 0.40)",
           }}
@@ -69,6 +70,7 @@ const Springneaptides = () => {
           className="bg-light col-2  "
           style={{
             height: "100%",
+            width:"20%",
             borderRadius: "20px",
             boxShadow: "0px 10px 5px rgba(0, 0, 0, 0.40)",
           }}

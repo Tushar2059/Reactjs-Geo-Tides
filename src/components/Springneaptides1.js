@@ -12,8 +12,10 @@ import { useEffect } from 'react'
 
 const Springneaptides1 = () => {
   var [nextFlag,setNextFlag]=useState(0);
+  var [validation,setValidation]=useState(0);
 
   var [instr,setChangeInstruction]=useState(Instru.default());
+ 
   useEffect(()=>{
     if(localStorage.getItem("count")==1)
     {
@@ -34,8 +36,8 @@ const Springneaptides1 = () => {
 
     <Middlecomp
       midheight="80%"
-      midcontent={<SprinneaptidesMidContent1 flag={nextFlag} instruction={setChangeInstruction} changeNextFlag={flag=>setNextFlag(flag)}/>}
-      feedback={<Feedback1 flag={nextFlag}/>}
+      midcontent={<SprinneaptidesMidContent1 validation={validation} flag={nextFlag} instruction={setChangeInstruction} changeNextFlag={flag=>setNextFlag(flag)}/>}
+      feedback={<Feedback1 changeValidation={(e)=>{setValidation(e)}} flag={nextFlag} instruction={setChangeInstruction}/>}
       //midcontent={<MainSpringNeap1 />}
       //feedback={<Feedback1 />}
       toolvisible="hidden"
@@ -49,8 +51,8 @@ const Springneaptides1 = () => {
     */}
 
     {/* <Footercomp footheight="10%" instruction={Instru.default} /> */}
-    <Footercomp footheight="10%" instruction={instr} changeNextFlag={flag=>setNextFlag(flag)}   instructionFoot={setChangeInstruction}/>
-   
+    <Footercomp  footheight="10%" instruction={instr} changeNextFlag={flag=>setNextFlag(flag)}   instructionFoot={setChangeInstruction}/>
+    {/* in above line No use of instructionFoot in Footercomp as a props */}
    
   </div>
   )

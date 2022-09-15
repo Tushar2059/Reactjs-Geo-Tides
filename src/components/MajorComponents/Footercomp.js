@@ -27,7 +27,8 @@ const Footercomp = ({ footheight, instruction ,changeNextFlag,instructionFoot}) 
    {
     
       changeNextFlag(1);
-      instructionFoot(Instru.Instruction_2());
+     // instructionFoot(Instru.Instruction_2());
+     Instru.Instruction_2();
       localStorage.removeItem("dispImg");
       localStorage.setItem("moonDrag",1);
      // setNextButton(true); // next button disabled

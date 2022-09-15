@@ -269,71 +269,58 @@ useFrame(() => {
  
   return (
     <>
-      
-               
       {/* position={[0,10,0]} */}
-            <PerspectiveCamera makeDefault position={[2,0,10]}  >
-            <OrbitControls  ref={controlsRef} enableZoom={true} enableRotate={!isDragging} 
-                maxAzimuthAngle={Math.PI / 4}
-                maxPolarAngle={Math.PI}
-                minAzimuthAngle={-Math.PI / 4}
-                minPolarAngle={0}
-                  //maxZoom={5}
-                 // minZoom={1}
-                />
-       {/* <OrbitControls minZoom={10} maxZoom={50} enabled={!isDragging} /> */}
-           </PerspectiveCamera>
-            
-            
-           
-              <mesh  ref={boxRef} position={positionEarth}  >
-              <sphereGeometry args={[1, 32, 32]} />
+      <PerspectiveCamera makeDefault position={[2, 0, 10]}>
+        <OrbitControls
+          ref={controlsRef}
+          enableZoom={true}
+          enableRotate={!isDragging}
+          maxAzimuthAngle={Math.PI / 4}
+          maxPolarAngle={Math.PI}
+          minAzimuthAngle={-Math.PI / 4}
+          minPolarAngle={0}
+          //maxZoom={5}
+          // minZoom={1}
+        />
+        {/* <OrbitControls minZoom={10} maxZoom={50} enabled={!isDragging} /> */}
+      </PerspectiveCamera>
 
-                <meshStandardMaterial map={earth1}></meshStandardMaterial>
+      {/* position={[2.3,0,0]} */}
 
-                {/* position={[2.3,0,0]} */}
-               
+      <mesh ref={boxRef} position={positionEarth}>
+        <sphereGeometry args={[1, 32, 32]} />
 
-            <mesh  position={positionMoon}  {...bindDrag()} onPointerOver={e => setIsDragging(true)}
-               onPointerOut={e => setIsDragging(false)}>
-                <sphereGeometry args={[0.5, 32, 32]} />
-                <meshStandardMaterial  map={moon1}/>
-              </mesh>
+        <meshStandardMaterial map={earth1}></meshStandardMaterial>
 
-              {/* <mesh>
-              <Text fontSize={0.5} position={[positionMoon[0], positionMoon[1]+2, positionMoon[2]]}>{positionText} </Text>
-            
-              </mesh> */}
-              </mesh>
+        <mesh 
+          position={positionMoon}
+          {...bindDrag()}
+          onPointerOver={(e) => setIsDragging(true)}
+          onPointerOut={(e) => setIsDragging(false)}
+        >
+          <sphereGeometry args={[0.5, 32, 32]} />
+          <meshStandardMaterial map={moon1} />
+        </mesh>
+      </mesh>
 
-              
-            
-              
-              
+      <mesh position={[-4.8, 0, 0]}>
+        <sphereGeometry args={[2, 32, 32]} />
+        <meshBasicMaterial map={sun1} color="#ff9933" />
+      </mesh>
 
-              <mesh position={[-4.8, 0, 0]}>
-                <sphereGeometry args={[2, 32, 32]} />
-                <meshBasicMaterial map={sun1} color="#ff9933"/>
-              </mesh>
-
-              
-
-          
-
-
-              {/* <mesh position={moonPos}  {...bindMoon()} >
+      {/* <mesh position={moonPos}  {...bindMoon()} >
                 <sphereGeometry args={[0.5, 32, 32]} />
                 <meshStandardMaterial  map={moon1}/>
               </mesh> */}
 
-                    {/* big ring */}
-              <mesh position={[3, 0, 0]} rotation={[-1.53589,0,0]} >
-                  <ringGeometry args={[2.23, 2.25, 30]}></ringGeometry>
-                  <meshBasicMaterial color= "0xffffff" side={THREE.DoubleSide}/>
-              </mesh>
+      {/* big ring */}
+      <mesh position={[3, 0, 0]} rotation={[-1.53589, 0, 0]}>
+        <ringGeometry args={[2.23, 2.25, 30]}></ringGeometry>
+        <meshBasicMaterial color="0xffffff" side={THREE.DoubleSide} />
+      </mesh>
 
-                   {/* small rings */}
-              {/* <mesh position={[0.8, 0, 0]}  rotation={[-1.53589,0,0]}>
+      {/* small rings */}
+      {/* <mesh position={[0.8, 0, 0]}  rotation={[-1.53589,0,0]}>
                   <ringGeometry args={[0.5, 0.51, 30]}></ringGeometry>
                   <meshBasicMaterial color= "0xffffff" side={THREE.DoubleSide}/>
               </mesh>
@@ -343,66 +330,78 @@ useFrame(() => {
                   <meshBasicMaterial color= "0xffffff" side={THREE.DoubleSide}/>
               </mesh> */}
 
-              {/* rotation={[-1.53589,0,0]} */}
-              <mesh position={[5.2, 0, 0]}  rotation={[0,0,0]}>
-                  <ringGeometry args={[0.5, 0.51, 30]}></ringGeometry>
-                  <meshBasicMaterial color= "0xffffff" side={THREE.DoubleSide}/>
-              </mesh>
+      {/* rotation={[-1.53589,0,0]} */}
+      <mesh position={[5.2, 0, 0]} rotation={[0, 0, 0]}>
+        <ringGeometry args={[0.5, 0.51, 30]}></ringGeometry>
+        <meshBasicMaterial color="0xffffff" side={THREE.DoubleSide} />
+      </mesh>
 
-
-              {/* <mesh position={[3, 0, -2.3]}  rotation={[-1.53589,0,0]}>
+      {/* <mesh position={[3, 0, -2.3]}  rotation={[-1.53589,0,0]}>
                   <ringGeometry args={[0.5, 0.51, 30]}></ringGeometry>
                   <meshBasicMaterial color= "0xffffff" side={THREE.DoubleSide}/>
               </mesh> */}
 
-             {fullmoon && (<Text fontSize={0.5} position={[5.2, 0, 0]}>Full moon </Text>)} 
-             {firstq && (<Text fontSize={0.5} position={[2.7, 0, 2.3]}>First quarter </Text>) } 
-              {newmoon && (<Text fontSize={0.5} position={[0.8, 0, 0]} >New Moon </Text>)}
-              {lastq && (<Text fontSize={0.5} position={[3, 0, -2.3]}>Last quarter </Text>)}
+      {fullmoon && (
+        <Text fontSize={0.5} position={[5.2, 0, 0]}>
+          Full moon{" "}
+        </Text>
+      )}
+      {firstq && (
+        <Text fontSize={0.5} position={[2.7, 0, 2.3]}>
+          First quarter{" "}
+        </Text>
+      )}
+      {newmoon && (
+        <Text fontSize={0.5} position={[0.8, 0, 0]}>
+          New Moon{" "}
+        </Text>
+      )}
+      {lastq && (
+        <Text fontSize={0.5} position={[3, 0, -2.3]}>
+          Last quarter{" "}
+        </Text>
+      )}
 
-              {moonText && (
-                <Text fontSize={0.5} position={ [7.9, 1.5, 0]}>Moon </Text>
-              )} 
-                       {/* [positionMoon[0],positionMoon[1]+0.4,positionMoon[0]] */}
+      {moonText && (
+        <Text fontSize={0.5} position={[7.9, 1.5, 0]}>
+          Moon{" "}
+        </Text>
+      )}
+      {/* [positionMoon[0],positionMoon[1]+0.4,positionMoon[0]] */}
 
-              {/* {moonText && (           
+      {/* {moonText && (           
               <mesh position={[7.9, 1, 0]} rotation-x={Math.PI} rotation-y={Math.PI }>
                 <planeGeometry args={[0.5, 0.6, 2]} />
                 <meshBasicMaterial map={ptrImage} color="#ff9933"/>
               </mesh>)}  */}
 
-              
-             
-               {/* <Text fontSize={0.5} position={[positionMoon[0], positionMoon[1]+2, positionMoon[2]]}>{positionText} </Text>
-             */}
+      {/* <Text fontSize={0.5} position={[positionMoon[0], positionMoon[1]+2, positionMoon[2]]}>{positionText} </Text>
+       */}
 
-              {/* <primitive object={new THREE.AxesHelper(30)}></primitive> */}
+      {/* <primitive object={new THREE.AxesHelper(30)}></primitive> */}
 
-              
-              {/* <mesh   position={positionMoon}  {...bindDrag()}>
+      {/* <mesh   position={positionMoon}  {...bindDrag()}>
                 <sphereGeometry args={[0.5, 32, 32]} />
                 <meshStandardMaterial  map={moon1}/>
               </mesh> */}
 
-              {/* <mesh   position={[3,0,0]} rotation={[0,0,-1.5708]} >
+      {/* <mesh   position={[3,0,0]} rotation={[0,0,-1.5708]} >
                 <capsuleGeometry args={[0.7, 1, 32,64]} />
                 <meshStandardMaterial  color="#8ec5de"/>
               </mesh> */}
-              
 
-              {/* <lineGeometry attach="geometry" ref={ref} />       //position={[9.5,0,0]}
+      {/* <lineGeometry attach="geometry" ref={ref} />       //position={[9.5,0,0]}
       <lineMaterial attach="material" color={color} linewidth={5} resolution={[size.width, size.height]} /> */}
-             
-              {/* <spotLight position={[-4.8,4.8, 0]} ></spotLight> */}
-             
-              {/* <spotLight position={[8,0, 0]} ></spotLight> */}
-              {/* <directionalLight position={[8,0, 0]} args={["#ffffff",0.5,25]}></directionalLight> */}
-              <ambientLight position={[-4.5, 0, 0]} args={["#ffffff",0.5]}></ambientLight>
-            {/* <pointLight position={[-4.8, 0, 0]} args={["#ffffff",1,25]}/> */}
 
-          <Html>
+      {/* <spotLight position={[-4.8,4.8, 0]} ></spotLight> */}
 
-          </Html>
+      {/* <spotLight position={[8,0, 0]} ></spotLight> */}
+      {/* <directionalLight position={[8,0, 0]} args={["#ffffff",0.5,25]}></directionalLight> */}
+      <ambientLight
+        position={[-4.5, 0, 0]}
+        args={["#ffffff", 0.5]}
+      ></ambientLight>
+      {/* <pointLight position={[-4.8, 0, 0]} args={["#ffffff",1,25]}/> */}
 
      
     </>

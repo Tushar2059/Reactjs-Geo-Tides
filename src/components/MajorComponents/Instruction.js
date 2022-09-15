@@ -21,6 +21,15 @@ const Instruction_2 = () => {
   );
 };
 
+const Instruction_33 = () => {
+  return (
+    <ul>
+      <li> Select the correct option.</li>
+     
+    </ul>
+  );
+};
+
 const Instruction_3 = () => {
   return (
     <ul>
@@ -74,5 +83,6 @@ export {
   Instruction_4,
   Instruction_5,
   Instruction_6,
-  Instruction_7
+  Instruction_7,
+  Instruction_33
 };

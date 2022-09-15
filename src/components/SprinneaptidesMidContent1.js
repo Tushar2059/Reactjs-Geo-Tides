@@ -3,6 +3,7 @@ import  { Suspense } from 'react'
 import { Canvas } from '@react-three/fiber';
 //import stars from "../../../Img/stars.jpg"
 import stars from "../Img/stars.jpg"
+
 import Moonposition from "./Moonposition";
 import MainSpringNeap from "./MainSpringNeap";
 import MainSpringNeap1 from "./MainSpringNeap1";
@@ -10,7 +11,7 @@ import { useNavigate } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 
 
-const SprinneaptidesMidContent1 = ({flag,instruction,changeNextFlag}) => {
+const SprinneaptidesMidContent1 = ({flag,instruction,changeNextFlag,validation}) => {
   const navigate=useNavigate();
   return (
     <div className="" style={{ width:"100%" }}>
@@ -27,7 +28,7 @@ const SprinneaptidesMidContent1 = ({flag,instruction,changeNextFlag}) => {
     {/* {(flag==1 || flag==2 || flag==3 || flag==4 || flag==5)
       && (<MainSpringNeap1 instruction={instruction} changeNextFlag={changeNextFlag}/>)} */}
 
-      <MainSpringNeap1 instruction={instruction} changeNextFlag={changeNextFlag}/>
+      <MainSpringNeap1 instruction={instruction} changeNextFlag={changeNextFlag} validation={validation}/>
     <ToastContainer></ToastContainer>
    
     </div>
