@@ -202,7 +202,7 @@ useFrame(() => {
       if(count==1)
      // boxRef.current.rotation.y=0
     {
-       
+       props.changeMsg("Moon is rotating around the earth");
       boxRef.current.rotation.y += 0.01;
       if(boxRef.current.rotation.y==0.01)
       {
@@ -270,7 +270,7 @@ useFrame(() => {
   return (
     <>
       {/* position={[0,10,0]} */}
-      <PerspectiveCamera makeDefault position={[2, 0, 10]}>
+      <PerspectiveCamera makeDefault position={[1, 0, 10]}>
         <OrbitControls
           ref={controlsRef}
           enableZoom={true}

@@ -46,7 +46,8 @@ const Footercomp = ({ footheight, instruction ,changeNextFlag,instructionFoot}) 
   };
   return (
     <div
-      className=" d-flex justify-content-around"
+      className=" d-flex justify-content-center"             
+                                                  //  around=>center
       style={{ height: `${footheight}` }}
     >
       <div
@@ -70,6 +71,7 @@ const Footercomp = ({ footheight, instruction ,changeNextFlag,instructionFoot}) 
           borderRadius: "20px",
           boxShadow: "0px 7px 4px rgba(0, 0, 0, 0.25)",
           display: "block",
+          marginLeft:"2%"               // marginLeft=>added
         }}
       >
           <BackNextBar

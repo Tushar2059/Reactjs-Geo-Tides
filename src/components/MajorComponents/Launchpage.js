@@ -31,7 +31,7 @@ const Launchpage = () => {
           className="d-flex justify-content-center align-items-center fw-bolder "
           style={{ height: "15vh", color: "#ac3843", fontSize: "2.5vw" }}
         >
-          Spring tide and neap tide.
+          Spring tides and neap tides.
         </div>
         <div className="" style={{ height: "20vh" }}>
           <div
@@ -45,6 +45,7 @@ const Launchpage = () => {
             style={{ height: "10vh", fontSize: "1.8vw" }}
           >
             {/* To verify the algebraic identity {Instru.default()} */}
+            To identify spring tides and neap tides.
           </div>
         </div>
         <div className="" style={{ height: "27vh" }}>

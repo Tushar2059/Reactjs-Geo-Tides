@@ -34,7 +34,7 @@ const BackNextBar = ({
     <div className="d-flex bg-succes" style={{height:"100%"}}>
      <div className="col-6 d-flex justify-content-center align-items-center" style={{height:"100%"}}> 
      <Button
-          //variant="contained"
+         
           onClick={goBack}
           style={{
             visibility: `${submitvisible}`,
@@ -44,8 +44,8 @@ const BackNextBar = ({
           <img
              className="img-fluid"
             style={{
-              backgroundRepeat: "no-repeat",
-              backgroundSize: "cover",
+             // backgroundRepeat: "no-repeat",
+              //backgroundSize: "cover",
               maxHeight: "50%",
               maxWidth: "50%",
               //marginTop:"5%"
@@ -68,8 +68,8 @@ const BackNextBar = ({
           <img
             className="img-fluid"
             style={{
-              backgroundRepeat: "no-repeat",
-              backgroundSize: "cover",
+              //backgroundRepeat: "no-repeat",
+              //backgroundSize: "cover",
               maxHeight: "50%",
               maxWidth: "50%",
              // marginTop:"5%"

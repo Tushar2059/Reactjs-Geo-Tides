@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import sun from "../Img/twodsun.jpg";
 //import sun from "../Img/sungif3.gif";
-import earth from "../Img/earthwithsea.png";
+import earth from "../Img/earthwithsea.jpg";
 import moon from "../Img/moon2d.jpg";
 import stars2 from "../Img/stars3.jpg";
 import stars1 from "../Img/stars1.jpg";
@@ -503,11 +503,12 @@ const MainSpringNeap1 = ({ instruction, changeNextFlag,validation }) => {
             style={{ height: "34%" }}
           >
             <img
-              className="img-fluid"
+              className="img-fluid "
               style={{
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "cover",
-                // maxHeight: "100%",
+                 //maxHeight: "100%",
+                 //maxWidth: "100%",
                 // width: "7rem",
                 // height: "17rem"
                 // marginTop: "10%",

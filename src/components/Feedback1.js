@@ -5,7 +5,7 @@ import Draggable from "react-draggable";
 //import sun from "../Img/twodsun.jpg";
 //import earth from "../Img/earth.png";
 
-import moon from "../Img/moonwhite1.jpg";
+import moon from "../Img/moonW.jpg";
 import sun from "../Img/sunwhite.jpg";
 import earth from "../Img/earthwhite.jpg";
 import moonDrag from "../Img/moon2d.jpg";
@@ -45,7 +45,7 @@ const Feedback1 = (props) => {
 
   const onClickSPringFull = () => {
     setFlag1(true);
-    toast.error("You are wrong", {
+    toast.error("You are wrong, please check again!", {
       position: "top-center",
       autoClose: 1700,
     });
@@ -53,7 +53,7 @@ const Feedback1 = (props) => {
 
   const onClickNeapLast = () => {
     setFlag2(true);
-    toast.error("You are wrong", {
+    toast.error("You are wrong, please check again!", {
       position: "top-center",
       autoClose: 1700,
     });
@@ -61,7 +61,7 @@ const Feedback1 = (props) => {
 
   const onClickSPringNew = () => {
     setFlag3(true);
-    toast.error("You are wrong", {
+    toast.error("You are wrong, please check again!", {
       position: "top-center",
       autoClose: 1700,
     });
@@ -69,7 +69,7 @@ const Feedback1 = (props) => {
 
   const onClickNeapFirst = () => {
     setFlag4(true);
-    toast.error("You are wrong", {
+    toast.error("You are wrong, please check again!", {
       position: "top-center",
       autoClose: 1700,
     });
@@ -87,8 +87,8 @@ const Feedback1 = (props) => {
             style={{
               maxHeight: "100%",
               maxWidth: "70%",
-              marginTop: "1%",
-              marginLeft: "5%",
+              marginTop: "3%",
+              marginLeft: "10%",
               //width: "9rem",
             }}
             src={sun}
@@ -114,12 +114,12 @@ const Feedback1 = (props) => {
           <img
             className="img-fluid"
             style={{
-              maxHeight: "80%",
-              maxWidth: "35%",
+              maxHeight: "100%",
+              maxWidth: "50%",
               marginTop: "15%",
-              marginLeft: "25%",
-              width: "7rem",
-              height: "6rem",
+              marginLeft: "20%",
+              //width: "7rem",
+              //height: "6rem",
             }}
             src={moon}
             alt="Logo"

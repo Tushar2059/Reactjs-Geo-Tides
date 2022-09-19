@@ -20,7 +20,7 @@ const Middlecomp = ({
 
   return (
     <div
-      className=" d-flex justify-content-around"
+      className=" d-flex justify-content-center"
       style={{ height: `${midheight}` }}
     >
       <div
@@ -41,6 +41,7 @@ const Middlecomp = ({
           height: "95%",
           borderRadius: "20px",
           boxShadow: "0px 10px 5px rgba(0, 0, 0, 0.40)",
+          marginLeft:"2%"
          
         }}
       >

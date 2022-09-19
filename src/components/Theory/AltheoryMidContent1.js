@@ -2,6 +2,7 @@ import React from "react";
 // import { useNavigate } from "react-router-dom";
 // import BackNextBar from "../MajorComponents/BackNextBar";
 import "../MajorComponents/Mid.css";
+import moonphases from "../../Img/moonphases.jpg";
 
 const AltheoryMidContent1 = () => {
   // const navigate = useNavigate();
@@ -12,58 +13,89 @@ const AltheoryMidContent1 = () => {
 
   return (
     <div className="overflow-auto scrollbar-primary" style={{ height: "100%" }}>
-     
-        <div className="my-5" style={{ width: "93%" }}>
-          <h6 className="">Objective</h6>
-          <p>
-            To verify the algebraic identity (a - b)<sup>2</sup>= a<sup>2</sup>-
-            2ab + b<sup>2</sup>
-          </p>
-          <h6>Algebraic Identity</h6>
-          <ul>
+      <div className="my-5" style={{ width: "93%" }}>
+        <h6 className="">Objective</h6>
+        <p>To identify spring tide and neap tide.</p>
+        <h6>Tides</h6>
+        <ul>
+          <li>
+            The periodic rise and fall of the waters of the ocean and its
+            inlets, produced by the attraction of the moon and sun, and
+            occurring about every 12 hours.
+            <li>A rise in a sea water level is called high tide.</li>
+            <li>At the time of high tide, sea water very close to coast.</li>
+            <li>A fall in a sea water level is called low tide.</li>
             <li>
-              An Algebraic identity is an equality, which is true for all values
-              of the variables in the equality.
+              At the time of low tide, sea water is far away from the coast.
             </li>
-            <li>
-              The algebraic equations which are valid for all values of
-              variables in them are called algebraic identities.
-            </li>
-            <li>
-              In this way, algebraic identities are used in the computation of
-              algebraic expressions and solving different polynomials
-            </li>
-            <li>
-              Algebraic identities are also used for the factorization of
-              polynomials.
-            </li>
-          </ul>
-          <h6>Pre-requisite Knowledge</h6>
-          <h6>Square</h6>
-          <p>
-            A square is a regular quadrilateral, which means that it has four
-            equal sides and four equal angles of 90 degrees each.
-          </p>
-          <p>Area of a Square</p>
-          <ul>
-            <li>The product of the length of each side itself.</li>
-            <li> Formula : Area = side²</li>
-          </ul>
+          </li>
+        </ul>
+        <h6>Phases of the moon</h6>
+        <div className="d-flex justify-content-center">
+          <img
+            className="img-fluid"
+            style={{
+              maxHeight: "30%",
+              maxWidth: "30%",
 
-          <h6>Rectangle</h6>
-          <p>
-            rectangle is a quadrilateral with four right angles and opposite
-            sides are equal. The length of a rectangle is the size of the longer
-            side, whereas the breadth is the size of the shorter side
-          </p>
-          <p>Area of a Rectangle</p>
-          <ul>
-            <li>The product of its length and breadth</li>
-            <li>Formula : Area = length x breadth</li>
-          </ul>
-
+              //marginLeft: "25%",
+              //width: "9rem",
+            }}
+            src={moonphases}
+            alt="Logo"
+          />
         </div>
-      
+        <h6>How tides are formed ?</h6>
+        <ul>
+          <li>
+            The strong gravitational pull exerted by the sun and the moon on the
+            earth’s surface causes the tides.
+          </li>
+          <li>
+            The water of the earth closer to the moon gets pulled under the
+            influence of the moon’s gravitational force and causes high tide.  
+          </li>
+          <li>
+            During the full moon and new moon days, the sun, the moon and the
+            earth are in the same line and the tides are highest.
+          </li>
+          <li>
+            But when the moon is in its first and last quarter, the ocean waters
+            get drawn in diagonally opposite directions by the gravitational
+            pull of sun and moon resulting in low tides. These tides are called
+            neap tides.
+          </li>
+        </ul>
+
+        <h6>Spring tides </h6>
+        <p>
+          During the full moon and new moon days, the sun, the moon and the
+          earth are in same line and the tides are highest. These tides are
+          called spring tides.
+        </p>
+        <h6>Neap tides </h6>
+        <p>
+          When the moon is in its first and last quarter, the ocean water get
+          drawn in diagonally opposite directions by gravitational pull of sun
+          and earth resulting low tides. These tides are called neap tides.
+        </p>
+
+        <h6>Why tides are important ?</h6>
+        <ul>
+          <li>Tides are used to generate electricity(Tidal electricity).</li>
+          <li>
+            Tides are very important in controlling the depth and flow of water
+            to help ships navigate easily near the shores. Using the advantage
+            of water level and current of water during high tides, the ships can
+            reach the harbor conveniently.
+          </li>
+          <li>
+            Commercial fishermen learn how to make use of high tides to catch
+            fish and take advantage of the higher gathering of fish that comes
+            near the shore.
+          </li>
+        </ul>
+      </div>
 
       {/* <BackNextBar
         setForward={onNext}

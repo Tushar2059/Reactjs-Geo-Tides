@@ -8,11 +8,14 @@ import MainSpringNeap from "./MainSpringNeap";
 import MainSpringNeap1 from "./MainSpringNeap1";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
+import { useState } from "react";
 
 
 const SprinneaptidesMidContent = ({flag,instruction,changeNextFlag}) => {
   const navigate=useNavigate();
+  const [msg, setMsg] = useState("");  
   return (
+    
     <div className="" style={{ width:"100%" }}>
      
      <div className=' col-12  ' style={{height:"90%",backgroundImage:"url("+ stars +")",borderTopLeftRadius:"20px",borderTopRightRadius:"20px"}}>
@@ -21,7 +24,7 @@ const SprinneaptidesMidContent = ({flag,instruction,changeNextFlag}) => {
       <Suspense fallback={null}>
         {/* {((flag)==0) && <Moonposition flag1={flag} instruction={instruction}/>} */}
 
-        <Moonposition flag1={flag} instruction={instruction}/>
+        <Moonposition flag1={flag} instruction={instruction} changeMsg={(e)=>{setMsg(e)}}/>
        
         {console.log("value of next in sibling component => "+flag)}
       </Suspense>
@@ -31,6 +34,10 @@ const SprinneaptidesMidContent = ({flag,instruction,changeNextFlag}) => {
       && (<MainSpringNeap1 instruction={instruction} changeNextFlag={changeNextFlag}/>)} */}
     <ToastContainer></ToastContainer>
    
+    </div>
+
+    <div className="bg-inf text-center">
+       <h4>{msg}</h4>
     </div>
       
     </div>
