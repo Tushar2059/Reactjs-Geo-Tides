@@ -11,9 +11,10 @@ import * as Instru from "./MajorComponents/Instruction";
 import { Button,} from "@mui/material";
 import { fontFamily, fontSize } from "@mui/system";
 import { fontGrid } from "@mui/material/styles/cssUtils";
-import spring from "../Img/earth6.gif";
+import spring from "../Img/firstgif1.gif";
 import { Card, Collapse, Fade } from "react-bootstrap";
-
+import { useDispatch, useSelector } from "react-redux";
+import { setShowHintButton } from "../Store/Store";
 const MainSpringNeap1 = ({ instruction, changeNextFlag,validation }) => {
   //   let [count, setCount] = useState(0);
   //   const [img_one, setImgOne] = useState(stars2);
@@ -102,6 +103,7 @@ const MainSpringNeap1 = ({ instruction, changeNextFlag,validation }) => {
   //     }
   //   };
 
+  let dispatch = useDispatch();
   let [textCollapse, setTextCollapse] = useState(false);
   let [earth1, setEarth1] = useState(earth);
 
@@ -244,6 +246,7 @@ const MainSpringNeap1 = ({ instruction, changeNextFlag,validation }) => {
     var src1 = ev.dataTransfer.getData("src");
     //document.getElementById(data).style.display="none"
     console.log("Count in drop Full 1 = " + count);
+    dispatch(setShowHintButton(false));  
     if (id == 1 && count == 1 && ev.target.src != src1 && validation==0) {
       //alert("in if drop full");
       // alert()
@@ -295,6 +298,7 @@ const MainSpringNeap1 = ({ instruction, changeNextFlag,validation }) => {
     //document.getElementById(data).style.display="none"
 
     console.log("Count in drop Last 1 =" + count);
+    dispatch(setShowHintButton(false));  
     if (id == 2 && count == 2 && validation==1) {
       document.getElementById(data).style.display = "none";
       setPath2(src2);
@@ -340,6 +344,7 @@ const MainSpringNeap1 = ({ instruction, changeNextFlag,validation }) => {
     //document.getElementById(data).style.display="none"
 
     console.log("Count in drop Last 1 =" + count);
+    dispatch(setShowHintButton(false));  
     if (id == 3 && count == 3 && validation==2) {
       document.getElementById(data).style.display = "none";
       setPath3(src3);
@@ -383,6 +388,7 @@ const MainSpringNeap1 = ({ instruction, changeNextFlag,validation }) => {
 
     console.log("abcdefgh" + stars2);
     console.log("Count in drop Last 1 =" + count);
+    dispatch(setShowHintButton(false));  
     if (id == 4 && count == 4 && validation==3) {
       document.getElementById(data).style.display = "none";
       setPath4(src4);

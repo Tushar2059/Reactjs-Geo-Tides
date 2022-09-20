@@ -12,7 +12,7 @@ const AltheoryMidContent1 = () => {
   // };
 
   return (
-    <div className="overflow-auto scrollbar-primary" style={{ height: "100%" }}>
+    <div className="overflow-auto scrollbar-primary" style={{ height: "100%",marginLeft:"2%" }}>
       <div className="my-5" style={{ width: "93%" }}>
         <h6 className="">Objective</h6>
         <p>To identify spring tide and neap tide.</p>

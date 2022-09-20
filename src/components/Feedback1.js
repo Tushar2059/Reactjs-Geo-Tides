@@ -13,7 +13,11 @@ import { Button, Card, Collapse, Fade, Form } from "react-bootstrap";
 import { toast } from "react-toastify";
 import * as Instru from "./MajorComponents/Instruction";
 
+import { useDispatch, useSelector } from "react-redux";
+import { incrementHintPopup, setShowHintButton } from "../Store/Store";
+
 const Feedback1 = (props) => {
+  let dispatch = useDispatch();
   let [flag1, setFlag1] = useState(false);
   let [flag2, setFlag2] = useState(false);
   let [flag3, setFlag3] = useState(false);
@@ -39,11 +43,14 @@ const Feedback1 = (props) => {
   // };
 
   function drag(ev) {
+     dispatch(incrementHintPopup(1));
+     dispatch(setShowHintButton(false));   
     ev.dataTransfer.setData("id", ev.target.id);
     ev.dataTransfer.setData("src", ev.target.src);
   }
 
   const onClickSPringFull = () => {
+    dispatch(setShowHintButton(true));  
     setFlag1(true);
     toast.error("You are wrong, please check again!", {
       position: "top-center",
@@ -52,6 +59,8 @@ const Feedback1 = (props) => {
   };
 
   const onClickNeapLast = () => {
+    dispatch(setShowHintButton(true));  
+    dispatch(incrementHintPopup(2));  
     setFlag2(true);
     toast.error("You are wrong, please check again!", {
       position: "top-center",
@@ -60,6 +69,8 @@ const Feedback1 = (props) => {
   };
 
   const onClickSPringNew = () => {
+    dispatch(setShowHintButton(true));  
+    dispatch(incrementHintPopup(3));  
     setFlag3(true);
     toast.error("You are wrong, please check again!", {
       position: "top-center",
@@ -68,6 +79,8 @@ const Feedback1 = (props) => {
   };
 
   const onClickNeapFirst = () => {
+    dispatch(setShowHintButton(true));  
+    dispatch(incrementHintPopup(4));  
     setFlag4(true);
     toast.error("You are wrong, please check again!", {
       position: "top-center",
@@ -141,7 +154,7 @@ const Feedback1 = (props) => {
          
         // localStorage.clear();
         }} */}
-
+            
             <img
               className="img-fluid"
               id="drag1"
@@ -179,6 +192,7 @@ const Feedback1 = (props) => {
                   type={type}
                   id={`inline-spring-${type}-1`}
                   onClick={(e) => {
+                    dispatch(setShowHintButton(false));  
                     props.changeValidation(1);
                     console.log(e.target.id);
                     //instruction(Instru.Instruction_3());
@@ -228,6 +242,7 @@ const Feedback1 = (props) => {
                   type={type}
                   id={`inline-neap-${type}-2`}
                   onClick={(e) => {
+                    dispatch(setShowHintButton(false));  
                     props.changeValidation(2);
                     props.instruction(Instru.Instruction_4());
                     console.log(e.target.id);
@@ -259,6 +274,7 @@ const Feedback1 = (props) => {
                   type={type}
                   id={`inline-spring-${type}-1`}
                   onClick={(e) => {
+                    dispatch(setShowHintButton(false));  
                     props.changeValidation(3);
                     props.instruction(Instru.Instruction_5());
                     console.log(e.target.id);
@@ -306,6 +322,7 @@ const Feedback1 = (props) => {
                   type={type}
                   id={`inline-neap-${type}-2`}
                   onClick={(e) => {
+                    dispatch(setShowHintButton(false));  
                     props.changeValidation(2);
                     props.instruction(Instru.Instruction_6());
                     console.log(e.target.id);
