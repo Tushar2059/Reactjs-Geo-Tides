@@ -167,6 +167,7 @@ const Feedback1 = (props) => {
                 maxWidth: "50%",
                 marginTop: "10%",
                 marginLeft: "25%",
+                cursor: "pointer",
                 //width: "9rem",
               }}
               src={moonDrag}

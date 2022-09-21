@@ -78,7 +78,7 @@ const Headcomp = ({ sidebarvisible }) => {
       </div>
 
       <div className="col-2 d-flex">
-        <div className="col-6 bg-warnin">
+        <div className="col-4 bg-warnin">
         {/* <Button variant="contained" style={{marginTop:"10%"}} onClick={openHintDialog}>Hint</Button> */}
        
          {(firstStore?.showHintButton) && (
@@ -88,8 +88,9 @@ const Headcomp = ({ sidebarvisible }) => {
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
             maxHeight: "100%",
-            maxWidth: "40%",
+            maxWidth: "50%",
             cursor: "pointer",
+            marginTop:"15%"
             //visibility: "hidden"
           }}
           src={hint}
@@ -106,7 +107,7 @@ const Headcomp = ({ sidebarvisible }) => {
         
        
         </div>
-        <div className="col-6 bg-inf d-flex justify-content-start" style={{ visibility: `${sidebarvisible}` }}>
+        <div className="col-8 bg-inf d-flex justify-content-start" style={{ visibility: `${sidebarvisible}` }}>
           <Rightsidemenu />
         </div>
       </div>
