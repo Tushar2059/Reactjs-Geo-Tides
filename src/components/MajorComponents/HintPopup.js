@@ -20,7 +20,7 @@ const HintPopup = ({ openHintDialog,closeHintDialog }) => {
 
   return (
     <>
-      <Dialog open={openHintDialog} TransitionComponent={Transition}>
+      <Dialog open={openHintDialog} TransitionComponent={Transition} >
         <DialogContent>
           <Typography>This is hint popup</Typography>
           {(firstStore?.hintPopup)==1 && (

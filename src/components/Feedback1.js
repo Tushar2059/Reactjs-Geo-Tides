@@ -52,6 +52,7 @@ const Feedback1 = (props) => {
   const onClickSPringFull = () => {
     dispatch(setShowHintButton(true));  
     setFlag1(true);
+   // props.instruction(Instru.Instruction_44());
     toast.error("You are wrong, please check again!", {
       position: "top-center",
       autoClose: 1700,
@@ -62,6 +63,7 @@ const Feedback1 = (props) => {
     dispatch(setShowHintButton(true));  
     dispatch(incrementHintPopup(2));  
     setFlag2(true);
+   // props.instruction(Instru.Instruction_44());
     toast.error("You are wrong, please check again!", {
       position: "top-center",
       autoClose: 1700,
@@ -72,6 +74,7 @@ const Feedback1 = (props) => {
     dispatch(setShowHintButton(true));  
     dispatch(incrementHintPopup(3));  
     setFlag3(true);
+    //props.instruction(Instru.Instruction_44());
     toast.error("You are wrong, please check again!", {
       position: "top-center",
       autoClose: 1700,
@@ -82,6 +85,7 @@ const Feedback1 = (props) => {
     dispatch(setShowHintButton(true));  
     dispatch(incrementHintPopup(4));  
     setFlag4(true);
+    // props.instruction(Instru.Instruction_44());
     toast.error("You are wrong, please check again!", {
       position: "top-center",
       autoClose: 1700,

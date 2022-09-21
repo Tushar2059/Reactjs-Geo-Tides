@@ -246,10 +246,11 @@ const MainSpringNeap1 = ({ instruction, changeNextFlag,validation }) => {
     var src1 = ev.dataTransfer.getData("src");
     //document.getElementById(data).style.display="none"
     console.log("Count in drop Full 1 = " + count);
-    dispatch(setShowHintButton(false));  
+     
     if (id == 1 && count == 1 && ev.target.src != src1 && validation==0) {
       //alert("in if drop full");
       // alert()
+      dispatch(setShowHintButton(false));
       document.getElementById(data).style.display = "none";
       // document.getElementById(data).src="../Img/stars3.jpg";
 
@@ -298,8 +299,9 @@ const MainSpringNeap1 = ({ instruction, changeNextFlag,validation }) => {
     //document.getElementById(data).style.display="none"
 
     console.log("Count in drop Last 1 =" + count);
-    dispatch(setShowHintButton(false));  
+    //dispatch(setShowHintButton(false));  
     if (id == 2 && count == 2 && validation==1) {
+      dispatch(setShowHintButton(false));
       document.getElementById(data).style.display = "none";
       setPath2(src2);
       console.log("in last " + src2);
@@ -344,8 +346,9 @@ const MainSpringNeap1 = ({ instruction, changeNextFlag,validation }) => {
     //document.getElementById(data).style.display="none"
 
     console.log("Count in drop Last 1 =" + count);
-    dispatch(setShowHintButton(false));  
+   // dispatch(setShowHintButton(false));  
     if (id == 3 && count == 3 && validation==2) {
+      dispatch(setShowHintButton(false));
       document.getElementById(data).style.display = "none";
       setPath3(src3);
       console.log("in last " + src3);
@@ -388,8 +391,9 @@ const MainSpringNeap1 = ({ instruction, changeNextFlag,validation }) => {
 
     console.log("abcdefgh" + stars2);
     console.log("Count in drop Last 1 =" + count);
-    dispatch(setShowHintButton(false));  
+   // dispatch(setShowHintButton(false));  
     if (id == 4 && count == 4 && validation==3) {
+      dispatch(setShowHintButton(false));
       document.getElementById(data).style.display = "none";
       setPath4(src4);
       console.log("in last " + src4);

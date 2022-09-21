@@ -81,24 +81,28 @@ const Headcomp = ({ sidebarvisible }) => {
         <div className="col-4 bg-warnin">
         {/* <Button variant="contained" style={{marginTop:"10%"}} onClick={openHintDialog}>Hint</Button> */}
        
-         {(firstStore?.showHintButton) && (
-          <img
+         {/* {(firstStore?.showHintButton) && ( */}
+          <Button disabled={!firstStore?.showHintButton} variant="contained" onClick={openHintDialog} style={{marginTop:"20%"}}>
+          {/* <img
           className=""
           style={{
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
             maxHeight: "100%",
-            maxWidth: "50%",
+            maxWidth: "65%",
             cursor: "pointer",
-            marginTop:"15%"
+            marginTop:"15%",
+            
             //visibility: "hidden"
           }}
           src={hint}
           alt="Logo"
           onClick={openHintDialog}
       
-        />
-         )} 
+        /> */}
+        
+        Hint</Button>
+         {/* )}  */}
         
        
         <HintPopup
