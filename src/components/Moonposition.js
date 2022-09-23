@@ -3,11 +3,14 @@ import * as THREE from 'three';
 //import { DragControls } from '../ActFolder1/controls/DragControls';
 //import { OrbitControls}  from '../ActFolder1/controls/OrbitControls';
 
-import worldmap3 from "../Img/worldmap3.jpg";
+
 
 import moon2 from "../Img/moon2.jpg";
+
 import sun2 from "../Img/sun2.jpg";
 import ptrimg from "../Img/pointer.png";
+import worldmap3 from "../Img/worldmap3.jpg";
+//import worldmap3 from "../Img/moon2.jpg";
 //import stars from "../../../Img/stars.jpg";
 //import pic1 from "../component/images/pic1.jpg"
 import { Canvas,useLoader,useFrame, useThree } from '@react-three/fiber';

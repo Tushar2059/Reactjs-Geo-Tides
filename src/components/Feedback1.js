@@ -161,7 +161,7 @@ const Feedback1 = (props) => {
          
         // localStorage.clear();
         }} */}
-            
+            {/* <h4 className="text-center">Object</h4> */}
             <img
               className="img-fluid"
               id="drag1"
