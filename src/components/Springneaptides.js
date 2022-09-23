@@ -27,7 +27,7 @@ const Springneaptides = () => {
         backgroundSize: "cover",
       }}
     >
-      <Headcomp />
+      <Headcomp hintVisible="hidden"/>
 
       <Middlecomp
         midheight="80%"

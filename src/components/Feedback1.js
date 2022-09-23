@@ -53,7 +53,8 @@ const Feedback1 = (props) => {
     dispatch(setShowHintButton(true));  
     setFlag1(true);
    // props.instruction(Instru.Instruction_44());
-    toast.error("You are wrong, please check again!", {
+   toast.error("You are wrong, please check again! you can see the hint by clicking on HINT button", {
+
       position: "top-center",
       autoClose: 1700,
     });
@@ -64,7 +65,7 @@ const Feedback1 = (props) => {
     dispatch(incrementHintPopup(2));  
     setFlag2(true);
    // props.instruction(Instru.Instruction_44());
-    toast.error("You are wrong, please check again!", {
+    toast.error("You are wrong, please check again! you can see the hint by clicking on HINT button", {
       position: "top-center",
       autoClose: 1700,
     });
@@ -75,7 +76,8 @@ const Feedback1 = (props) => {
     dispatch(incrementHintPopup(3));  
     setFlag3(true);
     //props.instruction(Instru.Instruction_44());
-    toast.error("You are wrong, please check again!", {
+    toast.error("You are wrong, please check again! you can see the hint by clicking on HINT button", {
+
       position: "top-center",
       autoClose: 1700,
     });
@@ -86,7 +88,8 @@ const Feedback1 = (props) => {
     dispatch(incrementHintPopup(4));  
     setFlag4(true);
     // props.instruction(Instru.Instruction_44());
-    toast.error("You are wrong, please check again!", {
+    toast.error("You are wrong, please check again! you can see the hint by clicking on HINT button", {
+
       position: "top-center",
       autoClose: 1700,
     });

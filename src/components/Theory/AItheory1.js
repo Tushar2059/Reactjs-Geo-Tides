@@ -14,7 +14,7 @@ const AItheory1 = () => {
         backgroundSize: "cover",
       }}
     >
-      <Headcomp />
+      <Headcomp hintVisible="hidden"/>
     
 
       {/* <Middlecomp

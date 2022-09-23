@@ -13,7 +13,7 @@ const Help = () => {
         backgroundSize: "cover",
       }}
     >
-      <Headcomp />
+      <Headcomp hintVisible="hidden"/>
 
       {/* <Middlecomp
         midheight="90%"

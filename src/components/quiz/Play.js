@@ -603,7 +603,7 @@ class Play extends React.Component {
           height: "100vh",
         }}
       >
-        <Headcomp sidebarvisible="hidden" />
+        <Headcomp sidebarvisible="hidden" hintVisible="hidden"/>
         <div
           className=" d-flex justify-content-center align-items-center"
           style={{ height: "90%" }}

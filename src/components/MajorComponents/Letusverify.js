@@ -14,7 +14,7 @@ const Letusverify = () => {
       backgroundSize: "cover",
     }}
   >
-    <Headcomp />
+    <Headcomp hintVisible="hidden"/>
     <div className="d-flex justify-content-center align-items-center" style={{ height: "90%" }}>
       <div
         className="col-12 col-md-9 border border-light border-2"

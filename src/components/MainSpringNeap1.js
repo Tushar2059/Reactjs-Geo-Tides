@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import sun from "../Img/twodsun.jpg";
 //import sun from "../Img/sungif3.gif";
-import earth from "../Img/earthwithsea.jpg";
+import earth from "../Img/e34.png";
 import moon from "../Img/moon2d.jpg";
 import stars2 from "../Img/stars3.jpg";
 import stars1 from "../Img/stars1.jpg";
@@ -15,6 +15,14 @@ import spring from "../Img/firstgif1.gif";
 import { Card, Collapse, Fade } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { setShowHintButton } from "../Store/Store";
+import { useEffect } from "react";
+
+import spring1 from "../Img/b1.gif";
+import neap1 from "../Img/b2.gif";
+import spring22 from "../Img/b3.gif";
+import neap22 from "../Img/b4.gif";
+//import earth from "../Img/earthwithsea.jpg";
+
 const MainSpringNeap1 = ({ instruction, changeNextFlag,validation }) => {
   //   let [count, setCount] = useState(0);
   //   const [img_one, setImgOne] = useState(stars2);
@@ -117,10 +125,10 @@ const MainSpringNeap1 = ({ instruction, changeNextFlag,validation }) => {
   // let [flag3, setFlag3] = useState(false);
   // let [flag4, setFlag4] = useState(false);
 
-  let [path1, setPath1] = useState(hint);
-  let [path2, setPath2] = useState(hint);
-  let [path3, setPath3] = useState(hint);
-  let [path4, setPath4] = useState(hint);
+  let [path1, setPath1] = useState(stars2);
+  let [path2, setPath2] = useState(stars2);
+  let [path3, setPath3] = useState(stars2);
+  let [path4, setPath4] = useState(stars2);
 
   let [count, setCount] = useState(1);
 
@@ -225,7 +233,12 @@ const MainSpringNeap1 = ({ instruction, changeNextFlag,validation }) => {
 
     ev.dataTransfer.setData("id", ev.target.id);
   }
+useEffect(()=>
+{ 
+ 
+  dispatch(setShowHintButton(false));
 
+},[])
   //drag start object
   function drag1(ev) {
     ev.dataTransfer.setData("id", ev.target.id);
@@ -271,7 +284,7 @@ const MainSpringNeap1 = ({ instruction, changeNextFlag,validation }) => {
       }, 3500);
       
       setHarrowfull(true);
-      setEarth1(spring);
+      setEarth1(spring1);
     }
     else if(id == 1  && ev.target.src == src1)
     {
@@ -315,6 +328,7 @@ const MainSpringNeap1 = ({ instruction, changeNextFlag,validation }) => {
       setMsg("Tides formed due to gravitional pull of moon and sun");
       setHarrowfull(false);
       setTextCollapse(true);
+      setEarth1(neap1);
       
     } 
     else if(id == 2  && ev.target.src == src2)
@@ -360,6 +374,7 @@ const MainSpringNeap1 = ({ instruction, changeNextFlag,validation }) => {
       instruction(Instru.Instruction_33());
       setMsg(" Tides formed due to gravitional pull of moon and sun");
       setTextCollapse(true);
+      setEarth1(spring22);
     } 
     else if(id == 3  && ev.target.src == src3)
     {
@@ -407,6 +422,7 @@ const MainSpringNeap1 = ({ instruction, changeNextFlag,validation }) => {
       setMsg("Tides formed due to gravitional pull of moon and sun");
       setTextCollapse(true);
       //localStorage.clear();
+      setEarth1(neap22);
     }
     else if(id == 4  && ev.target.src == src4)
     {
@@ -517,8 +533,8 @@ const MainSpringNeap1 = ({ instruction, changeNextFlag,validation }) => {
               style={{
                 backgroundRepeat: "no-repeat",
                 backgroundSize: "cover",
-                 //maxHeight: "100%",
-                 //maxWidth: "100%",
+                // maxHeight: "100%",
+                // maxWidth: "100%",
                 // width: "7rem",
                 // height: "17rem"
                 // marginTop: "10%",

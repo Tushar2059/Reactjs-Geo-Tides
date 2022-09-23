@@ -7,13 +7,13 @@ import HomeQuitPopup from "./HomeQuitPopup";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@mui/material";
 import HintPopup from "./HintPopup";
-import {  useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
-const Headcomp = ({ sidebarvisible }) => {
+const Headcomp = ({ sidebarvisible,hintVisible }) => {
   const [showDialog, setShowDialog] = useState(false);
   const [showHintDialog, setShowHintDialog] = useState(false);
 
-  let {firstStore}= useSelector((state) => state);
+  let { firstStore } = useSelector((state) => state);
 
   const navigate = useNavigate();
 
@@ -30,11 +30,9 @@ const Headcomp = ({ sidebarvisible }) => {
     navigate("/");
   };
 
-  const openHintDialog =() =>
-  {
-    
+  const openHintDialog = () => {
     setShowHintDialog(true);
-  }
+  };
 
   return (
     <div className="d-flex" style={{ height: "10%" }}>
@@ -79,10 +77,26 @@ const Headcomp = ({ sidebarvisible }) => {
 
       <div className="col-2 d-flex">
         <div className="col-4 bg-warnin">
-        {/* <Button variant="contained" style={{marginTop:"10%"}} onClick={openHintDialog}>Hint</Button> */}
-       
-         {/* {(firstStore?.showHintButton) && ( */}
-          <Button disabled={!firstStore?.showHintButton} variant="contained" onClick={openHintDialog} style={{marginTop:"20%"}}>
+          {/* <Button variant="contained" style={{marginTop:"10%"}} onClick={openHintDialog}>Hint</Button> */}
+
+          {/* {(firstStore?.showHintButton) && ( */}
+
+          <Button
+            disabled={!firstStore?.showHintButton}
+            variant="contained"
+            onClick={openHintDialog}
+            style={{ marginTop: "20%", visibility:hintVisible ,
+             maxWidth: "80%",
+           maxHeight: "80%",
+           minWidth: "40%",
+           minHeight: "40%"
+      
+    
+            }}
+           
+          >
+            Hint
+          </Button>
           {/* <img
           className=""
           style={{
@@ -100,18 +114,18 @@ const Headcomp = ({ sidebarvisible }) => {
           onClick={openHintDialog}
       
         /> */}
-        
-        Hint</Button>
-         {/* )}  */}
-        
-       
-        <HintPopup
-          openHintDialog={showHintDialog}
-          closeHintDialog={closeDialog}/>
-        
-       
+
+          {/* )}  */}
+
+          <HintPopup
+            openHintDialog={showHintDialog}
+            closeHintDialog={closeDialog}
+          />
         </div>
-        <div className="col-8 bg-inf d-flex justify-content-start" style={{ visibility: `${sidebarvisible}` }}>
+        <div
+          className="col-8 bg-inf d-flex justify-content-start"
+          style={{ visibility: `${sidebarvisible}` }}
+        >
           <Rightsidemenu />
         </div>
       </div>
