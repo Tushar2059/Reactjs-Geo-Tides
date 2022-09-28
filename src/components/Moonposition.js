@@ -8,7 +8,7 @@ import * as THREE from 'three';
 import moon2 from "../Img/moon2.jpg";
 
 import sun2 from "../Img/sun2.jpg";
-import ptrimg from "../Img/pointer.png";
+import ptrimg from "../Img/dnarrow.png";
 import worldmap3 from "../Img/worldmap3.jpg";
 //import worldmap3 from "../Img/moon2.jpg";
 //import stars from "../../../Img/stars.jpg";
@@ -79,7 +79,7 @@ var [positionMoon,setPositionMoon]=useState([positionEarth[0] +2 ,0,0]);
     
     //if(x!=0 && z!=0 )
     setPositionMoon([x / aspect +5, y , z/aspect]);
-    
+   
     console.log("position of moon = x , y , z "+ positionMoon[0].toFixed(1)+"  " + positionMoon[1] +"  " +positionMoon[2].toFixed(1));
 
     //new moon
@@ -188,6 +188,11 @@ useFrame(() => {
     const moon1 = useLoader(TextureLoader, moon2);
     const ptrImage = useLoader(TextureLoader, ptrimg);
 
+    // const earth1 = useLoader(THREE.ImageLoader, worldmap3);
+    // const sun1 = useLoader(THREE.ImageLoader, sun2);
+    // const moon1 = useLoader(THREE.ImageLoader, moon2);
+    // const ptrImage = useLoader(THREE.ImageLoader, ptrimg);
+
    
  
   
@@ -242,6 +247,7 @@ useFrame(() => {
         //count=count+1;
        // setCount(count);
         localStorage.setItem("count",1);
+        localStorage.setItem("count1",1);
         
         props.instruction(Instru.Instruction_1());
         
@@ -372,11 +378,13 @@ useFrame(() => {
       )}
       {/* [positionMoon[0],positionMoon[1]+0.4,positionMoon[0]] */}
 
-      {/* {moonText && (           
-              <mesh position={[7.9, 1, 0]} rotation-x={Math.PI} rotation-y={Math.PI }>
+      {moonText && (           
+              <mesh position={[7.9, 1, 0]} >
                 <planeGeometry args={[0.5, 0.6, 2]} />
-                <meshBasicMaterial map={ptrImage} color="#ff9933"/>
-              </mesh>)}  */}
+                <meshBasicMaterial map={ptrImage} color=""/>
+              </mesh>)} 
+
+              {/* rotation-x={Math.PI} rotation-y={Math.PI } */}
 
       {/* <Text fontSize={0.5} position={[positionMoon[0], positionMoon[1]+2, positionMoon[2]]}>{positionText} </Text>
        */}

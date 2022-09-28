@@ -30,14 +30,14 @@ const Startact = () => {
     <div className="" style={{ height: "100%" }}>
       <div
         className=" d-flex justify-content-center align-items-center text-center"
-        style={{ height: "50%", fontSize: "1.5vw" }}
+        style={{ height: "50%", fontSize: "1.2vw",fontFamily:"arial" }}
       >
-        <span className="fw-bold">Objective</span>: 
+        <span className="fw-bold">Objective</span>: To identify spring tides and neap tides. 
         {/* {Instru.default()} */}
       </div>
       <div
         className=" d-flex justify-content-center  "
-        style={{ height: "50%" }}
+        style={{ height: "50%",fontSize: "1.0vw",fontFamily:"arial" }}
       >
         <motion.div
           whileHover={{ scale: 1.1 }}

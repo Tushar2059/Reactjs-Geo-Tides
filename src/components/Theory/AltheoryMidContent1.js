@@ -12,12 +12,12 @@ const AltheoryMidContent1 = () => {
   // };
 
   return (
-    <div className="overflow-auto scrollbar-primary" style={{ height: "100%",marginLeft:"2%" }}>
+    <div className="overflow-auto scrollbar-primary" style={{ height: "100%",marginLeft:"2%",fontFamily:"arial" }}>
       <div className="my-5" style={{ width: "93%" }}>
-        <h6 className="">Objective</h6>
-        <p>To identify spring tide and neap tide.</p>
-        <h6>Tides</h6>
-        <ul>
+        <p className="" style={{ fontWeight: "bold",fontSize: "1.5vw"}}>Objective:</p>
+        <p style={{ fontSize: "1.2vw"}}>To identify spring tide and neap tide.</p>
+        <p style={{ fontWeight: "bold",fontSize: "1.5vw"}}>Tides:</p>
+        <ul style={{ fontSize: "1.2vw"}}>
           <li>
             The periodic rise and fall of the waters of the ocean and its
             inlets, produced by the attraction of the moon and sun, and
@@ -30,7 +30,7 @@ const AltheoryMidContent1 = () => {
             </li>
           </li>
         </ul>
-        <h6>Phases of the moon</h6>
+        <p style={{ fontWeight: "bold",fontSize: "1.5vw"}}>Phases of the moon:</p>
         <div className="d-flex justify-content-center">
           <img
             className="img-fluid"
@@ -45,8 +45,8 @@ const AltheoryMidContent1 = () => {
             alt="Logo"
           />
         </div>
-        <h6>How tides are formed ?</h6>
-        <ul>
+        <p style={{ fontWeight: "bold",fontSize: "1.5vw"}}>How tides are formed ?</p>
+        <ul style={{ fontSize: "1.2vw"}}>
           <li>
             The strong gravitational pull exerted by the sun and the moon on the
             earth’s surface causes the tides.
@@ -67,21 +67,21 @@ const AltheoryMidContent1 = () => {
           </li>
         </ul>
 
-        <h6>Spring tides </h6>
-        <p>
+        <p style={{ fontWeight: "bold",fontSize: "1.5vw"}}>Spring tides: </p>
+        <p style={{ fontSize: "1.2vw"}}>
           During the full moon and new moon days, the sun, the moon and the
           earth are in same line and the tides are highest. These tides are
           called spring tides.
         </p>
-        <h6>Neap tides </h6>
-        <p>
+        <p style={{ fontWeight: "bold",fontSize: "1.5vw"}}>Neap tides: </p>
+        <p style={{ fontSize: "1.2vw"}}>
           When the moon is in its first and last quarter, the ocean water get
           drawn in diagonally opposite directions by gravitational pull of sun
           and earth resulting low tides. These tides are called neap tides.
         </p>
 
-        <h6>Why tides are important ?</h6>
-        <ul>
+        <p style={{ fontWeight: "bold",fontSize: "1.5vw"}}>Why tides are important ?</p>
+        <ul style={{ fontSize: "1.2vw"}}>
           <li>Tides are used to generate electricity(Tidal electricity).</li>
           <li>
             Tides are very important in controlling the depth and flow of water

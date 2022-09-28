@@ -14,10 +14,12 @@ import { toast } from "react-toastify";
 import * as Instru from "./MajorComponents/Instruction";
 
 import { useDispatch, useSelector } from "react-redux";
-import { incrementHintPopup, setShowHintButton } from "../Store/Store";
+import { incrementHintPopup, setShowHintButton, updateRestart } from "../Store/Store";
 
 const Feedback1 = (props) => {
   let dispatch = useDispatch();
+  // let {firstStore}=useSelector((state)=>{state});
+  let {firstStore}= useSelector((state) => state);
   let [flag1, setFlag1] = useState(false);
   let [flag2, setFlag2] = useState(false);
   let [flag3, setFlag3] = useState(false);
@@ -115,7 +117,7 @@ const Feedback1 = (props) => {
             alt="Logo"
             //onClick={handleChange}
           />
-          <label style={{ fontWeight: "bold" }}>-sun</label>
+          <label style={{fontWeight:"bold", fontSize: "1.2vw",fontFamily:"arial"}}>-sun</label>
           <img
             className="img-fluid"
             style={{
@@ -129,7 +131,7 @@ const Feedback1 = (props) => {
             alt="Logo"
             //onClick={handleChange}
           />
-          <label style={{ fontWeight: "bold" }}>-Earth</label>
+          <label style={{fontWeight:"bold", fontSize: "1.2vw",fontFamily:"arial"}}>-Earth</label>
 
           <img
             className="img-fluid"
@@ -146,7 +148,7 @@ const Feedback1 = (props) => {
             //onClick={handleChange}
           />
 
-          <label style={{ fontWeight: "bold" }}>-Moon</label>
+          <label style={{fontWeight:"bold", fontSize: "1.2vw",fontFamily:"arial"}}>-Moon</label>
         </div>
       )}
 
@@ -187,13 +189,16 @@ const Feedback1 = (props) => {
       {/* Checkboxes for questions */}
       {/* for Full Moon */}
       {props.flag == 2 && (
-        <div>
-          <p className="text-center fw-bold">What do you observed? :</p>
+        <div className="container  bg-inf d-flex  justify-content-center " style={{height:"100%",fontSize: "1.2vw",fontFamily:"arial"}}>
+        <div className="row d-flex align-items-center">
+        <div className="col d-flex flex-column border rounded-pill shadow-lg p-5">
+          <p className="text-center fw-bold " style={{fontSize: "1.2vw",fontFamily:"arial"}}>What do you observed?</p>
 
           <Form>
             {["radio"].map((type) => (
               <div key={`inline-${type}`} className=" mb-3">
                 <Form.Check
+                disabled={firstStore?.enableRadio}
                   inline
                   label="spring tides"
                   name="group1"
@@ -212,6 +217,7 @@ const Feedback1 = (props) => {
                   }}
                 />
                 <Form.Check
+                disabled={firstStore?.enableRadio}
                   inline
                   label="Neap tide"
                   name="group1"
@@ -220,22 +226,27 @@ const Feedback1 = (props) => {
                   onClick={onClickSPringFull}
                 />
                 <br></br> <br></br>
-                {flag1 && <p>Spring tides full moon </p>}
+                {/* {flag1 && <p>Spring tides full moon </p>} */}
               </div>
             ))}
           </Form>
+          </div>
+          </div>
         </div>
       )}
 
       {/* for last quarter Moon */}
       {props.flag == 3 && (
-        <>
-          <p className="text-center fw-bold">What do you observed? :</p>
-          <label>Last quarter Moon Neap tide? :</label>
+        <div className="container  bg-inf d-flex  justify-content-center " style={{height:"100%"}}>
+        <div className="row d-flex align-items-center">
+        <div className="col d-flex flex-column border rounded-pill shadow-lg p-5">
+          <p className="text-center fw-bold" style={{fontSize: "1.2vw",fontFamily:"arial"}}>What do you observed?</p>
+          {/* <label>Last quarter Moon Neap tide? :</label> */}
           <Form>
             {["radio"].map((type) => (
               <div key={`inline-${type}`} className=" mb-3">
                 <Form.Check
+                 disabled={firstStore?.enableRadio}
                   inline
                   label="spring tides"
                   name="group1"
@@ -244,6 +255,7 @@ const Feedback1 = (props) => {
                   onClick={onClickNeapLast}
                 />
                 <Form.Check
+                 disabled={firstStore?.enableRadio}
                   inline
                   label="Neap tide"
                   name="group1"
@@ -254,6 +266,7 @@ const Feedback1 = (props) => {
                     props.changeValidation(2);
                     props.instruction(Instru.Instruction_4());
                     console.log(e.target.id);
+                    //setFlag2(false);
                     toast.success("You are correct", {
                       position: "top-center",
                       autoClose: 1700,
@@ -261,21 +274,26 @@ const Feedback1 = (props) => {
                   }}
                 />
                 <br></br> <br></br>
-                {flag2 && <p>Neap tide last quarter moon </p>}
+                {/* {flag2 && <p>Neap tide last quarter moon </p>} */}
               </div>
             ))}
           </Form>
-        </>
+          </div>
+          </div>
+        </div>
       )}
 
       {/* for new  Moon */}
       {props.flag == 4 && (
-        <>
-          <label>New moon Spring tides? :</label>
+        <div className="container  bg-inf d-flex  justify-content-center " style={{height:"100%"}}>
+        <div className="row d-flex align-items-center">
+        <div className="col d-flex flex-column border rounded-pill shadow-lg p-5">
+        <p className="text-center fw-bold" style={{fontSize: "1.2vw",fontFamily:"arial"}}>What do you observed?</p>
           <Form>
             {["radio"].map((type) => (
               <div key={`inline-${type}`} className=" mb-3">
                 <Form.Check
+                 disabled={firstStore?.enableRadio}
                   inline
                   label="spring tides"
                   name="group1"
@@ -293,6 +311,7 @@ const Feedback1 = (props) => {
                   }}
                 />
                 <Form.Check
+                 disabled={firstStore?.enableRadio}
                   inline
                   label="Neap tide"
                   name="group1"
@@ -301,21 +320,26 @@ const Feedback1 = (props) => {
                   onClick={onClickSPringNew}
                 />
                 <br></br> <br></br>
-                {flag3 && <p>Spring tides New moon </p>}
+                {/* {flag3 && <p>Spring tides New moon </p>} */}
               </div>
             ))}
           </Form>
-        </>
+          </div>
+          </div>
+        </div>
       )}
 
       {/* for first quarter Moon */}
       {props.flag == 5 && (
-        <>
-          <label>first quarter Moon Neap tide? :</label>
+        <div className="container  bg-inf d-flex  justify-content-center " style={{height:"100%"}}>
+        <div className="row d-flex align-items-center">
+        <div className="col d-flex flex-column border rounded-pill shadow-lg p-5">
+        <p className="text-center fw-bold" style={{fontSize: "1.2vw",fontFamily:"arial"}}>What do you observed?</p>
           <Form>
             {["radio"].map((type) => (
               <div key={`inline-${type}`} className=" mb-3">
                 <Form.Check
+                   disabled={firstStore?.enableRadio}
                   inline
                   label="spring tides"
                   name="group1"
@@ -324,6 +348,7 @@ const Feedback1 = (props) => {
                   onClick={onClickNeapFirst}
                 />
                 <Form.Check
+                 disabled={firstStore?.enableRadio}
                   inline
                   label="Neap tide"
                   name="group1"
@@ -333,6 +358,7 @@ const Feedback1 = (props) => {
                     dispatch(setShowHintButton(false));  
                     props.changeValidation(2);
                     props.instruction(Instru.Instruction_6());
+                    dispatch(updateRestart(true));
                     console.log(e.target.id);
                     toast.success("You are correct", {
                       position: "top-center",
@@ -341,11 +367,13 @@ const Feedback1 = (props) => {
                   }}
                 />
                 <br></br> <br></br>
-                {flag4 && <p>Neap tide first quarter moon </p>}
+                {/* {flag4 && <p>Neap tide first quarter moon </p>} */}
               </div>
             ))}
           </Form>
-        </>
+          </div>
+          </div>
+        </div>
       )}
     </div>
   );

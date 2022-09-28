@@ -1,10 +1,10 @@
 import { Button } from "@mui/material";
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import back from "../../Img/back.png";
 import next from "../../Img/next.png";
-import { setShowHintButton } from "../../Store/Store";
+import { resetAll, setShowHintButton, updateRestart } from "../../Store/Store";
 
 const BackNextBar = ({
   setForward,
@@ -16,6 +16,7 @@ const BackNextBar = ({
 }) => {
   const navigate = useNavigate();
   let dispatch = useDispatch();
+  let {firstStore}= useSelector((state) => state);
 
   const goBack = ()=>
   {
@@ -36,6 +37,13 @@ const BackNextBar = ({
     }
     
    
+  }
+
+  const restart = () =>
+  {
+    localStorage.clear();
+    dispatch(resetAll());
+    navigate("/letusverify/");
   }
 
   return (
@@ -68,7 +76,12 @@ const BackNextBar = ({
 </div>
      <div className="col-6" style={{height:"100%"}}>
 
-     <Button
+     {firstStore.restartButton ? (<Button
+          variant="contained"
+          onClick={restart}
+          >Restart
+         
+        </Button>):(<Button
          // variant="contained"
           onClick={clickSubmit}
           style={{
@@ -89,7 +102,7 @@ const BackNextBar = ({
             src={next}
             alt="Logo"
           />
-        </Button>
+        </Button>) }
      </div>
           
    </div>

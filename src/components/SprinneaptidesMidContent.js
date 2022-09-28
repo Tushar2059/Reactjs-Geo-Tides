@@ -13,7 +13,7 @@ import { useState } from "react";
 
 const SprinneaptidesMidContent = ({flag,instruction,changeNextFlag}) => {
   const navigate=useNavigate();
-  const [msg, setMsg] = useState("");  
+  const [msg, setMsg] = useState(" ");  
   return (
     
     <div className="" style={{ width:"100%" }}>
@@ -26,7 +26,7 @@ const SprinneaptidesMidContent = ({flag,instruction,changeNextFlag}) => {
 
         <Moonposition flag1={flag} instruction={instruction} changeMsg={(e)=>{setMsg(e)}}/>
        
-        {console.log("value of next in sibling component => "+flag)}
+        {/* {console.log("value of next in sibling component => "+flag)} */}
       </Suspense>
     </Canvas>  
 
@@ -36,8 +36,8 @@ const SprinneaptidesMidContent = ({flag,instruction,changeNextFlag}) => {
    
     </div>
 
-    <div className="bg-inf text-center">
-       <h4>{msg}</h4>
+    <div className="bg-inf text-center" style={{fontSize: "1.2vw",fontFamily:"arial"}}>
+       <p >{msg}</p>
     </div>
       
     </div>

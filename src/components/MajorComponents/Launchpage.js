@@ -14,7 +14,7 @@ const Launchpage = () => {
         backgroundImage: "url(" + backgroundImg + ")",
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
-        fontFamily: "Arial",
+        fontFamily: "arial",
       }}
     >
       <div
@@ -42,7 +42,7 @@ const Launchpage = () => {
           </div>
           <div
             className="d-flex justify-content-center align-items-center fw-normal"
-            style={{ height: "10vh", fontSize: "1.8vw" }}
+            style={{ height: "10vh", fontSize: "1.8vw",fontFamily: "arial", }}
           >
             {/* To verify the algebraic identity {Instru.default()} */}
             To identify spring tides and neap tides.
@@ -53,21 +53,22 @@ const Launchpage = () => {
             className="d-flex justify-content-center align-items-center fw-bolder"
             style={{ height: "5vh", fontSize: "2.0vw" }}
           >
-            Learning Outcome:
+            Learning Outcome: 
+           
           </div>
-          {/* <div
+          
+          <div
             className="fw-normal d-flex justify-content-center align-items-center flex-column  "
             style={{ height: "22vh", fontSize: "1.5vw" }}
           >
             <div className="text-center">
-              1.Student will be able to expand/factorise of algebraic identity{" "}
+            1. Student will be able to understand types of tides. {" "}
+            
             </div>
             <div className="text-center">
-              2. Student will be able to calculate the square of a number by
-              expressing it as the difference of two convenient numbers by using
-              algebraic identity
+            2. Student will be able to understand different positions of moon.
             </div>
-          </div> */}
+          </div>
         </div>
         <div
           className="d-flex justify-content-center"

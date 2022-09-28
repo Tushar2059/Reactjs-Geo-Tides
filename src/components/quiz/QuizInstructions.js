@@ -107,7 +107,7 @@ const QuizInstructions = () => {
                   </li>
                   <li>
                     Select the option which best answers the question by cliking
-                    (or selecting) it.
+                    (or selectig) it.
                   </li>
                   <li>
                     If the question is fill in the blanks type then it is

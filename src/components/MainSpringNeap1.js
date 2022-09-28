@@ -14,7 +14,7 @@ import { fontGrid } from "@mui/material/styles/cssUtils";
 import spring from "../Img/firstgif1.gif";
 import { Card, Collapse, Fade } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { setShowHintButton } from "../Store/Store";
+import { enableDisableRadio, setShowHintButton, updateRestart } from "../Store/Store";
 import { useEffect } from "react";
 
 import spring1 from "../Img/b1.gif";
@@ -278,6 +278,7 @@ useEffect(()=>
         setMsg("Tides formed due to gravitional pull of moon and sun");
         instruction(Instru.Instruction_33());
         setCount(count);
+        dispatch(enableDisableRadio(false));
         // setTimeout(() => {
         //   setTextCollapse(!textCollapse);
         // }, 3600);
@@ -310,7 +311,7 @@ useEffect(()=>
     var data = ev.dataTransfer.getData("id");
     var src2 = ev.dataTransfer.getData("src");
     //document.getElementById(data).style.display="none"
-
+    dispatch(enableDisableRadio(true));
     console.log("Count in drop Last 1 =" + count);
     //dispatch(setShowHintButton(false));  
     if (id == 2 && count == 2 && validation==1) {
@@ -319,15 +320,22 @@ useEffect(()=>
       setPath2(src2);
       console.log("in last " + src2);
       count = count + 1;
-      setCount(count);
+      //setCount(count);
       console.log("Count in drop Last 2 =" + count);
       //instruction(Instru.Instruction_4());
       changeNextFlag(3);
+      setTimeout(() => {
+        setTextCollapse(!textCollapse);
+        setMsg("Tides formed due to gravitional pull of moon and sun");
+        instruction(Instru.Instruction_33());
+        setCount(count);
+        dispatch(enableDisableRadio(false));
+      }, 3500);
 
-      instruction(Instru.Instruction_33());
-      setMsg("Tides formed due to gravitional pull of moon and sun");
-      setHarrowfull(false);
-      setTextCollapse(true);
+      //instruction(Instru.Instruction_33());
+      //setMsg("Tides formed due to gravitional pull of moon and sun");
+      //setHarrowfull(false);
+     // setTextCollapse(true);
       setEarth1(neap1);
       
     } 
@@ -358,7 +366,7 @@ useEffect(()=>
     var data = ev.dataTransfer.getData("id");
     var src3 = ev.dataTransfer.getData("src");
     //document.getElementById(data).style.display="none"
-
+    dispatch(enableDisableRadio(true));
     console.log("Count in drop Last 1 =" + count);
    // dispatch(setShowHintButton(false));  
     if (id == 3 && count == 3 && validation==2) {
@@ -367,13 +375,21 @@ useEffect(()=>
       setPath3(src3);
       console.log("in last " + src3);
       count = count + 1;
-      setCount(count);
+     // setCount(count);
       console.log("Count in drop Last 2 =" + count);
       //instruction(Instru.Instruction_5());
       changeNextFlag(4);
-      instruction(Instru.Instruction_33());
-      setMsg(" Tides formed due to gravitional pull of moon and sun");
-      setTextCollapse(true);
+      setTimeout(() => {
+        setTextCollapse(!textCollapse);
+        setMsg("Tides formed due to gravitional pull of moon and sun");
+        instruction(Instru.Instruction_33());
+        setCount(count);
+        dispatch(enableDisableRadio(false));
+      
+      }, 3500);
+      //instruction(Instru.Instruction_33());
+      //setMsg(" Tides formed due to gravitional pull of moon and sun");
+      //setTextCollapse(true);
       setEarth1(spring22);
     } 
     else if(id == 3  && ev.target.src == src3)
@@ -403,7 +419,7 @@ useEffect(()=>
     var data = ev.dataTransfer.getData("id");
     var src4 = ev.dataTransfer.getData("src");
     //document.getElementById(data).style.display="none"
-
+    dispatch(enableDisableRadio(true));
     console.log("abcdefgh" + stars2);
     console.log("Count in drop Last 1 =" + count);
    // dispatch(setShowHintButton(false));  
@@ -414,13 +430,21 @@ useEffect(()=>
       console.log("in last " + src4);
       // count=count+1;
       count = count + 1;
-      setCount(count);
+      //setCount(count);
       console.log("Count in drop Last 2 =" + count);
      // instruction(Instru.Instruction_6());
       changeNextFlag(5);
-      instruction(Instru.Instruction_33());
-      setMsg("Tides formed due to gravitional pull of moon and sun");
-      setTextCollapse(true);
+      setTimeout(() => {
+        setTextCollapse(!textCollapse);
+        setMsg("Tides formed due to gravitional pull of moon and sun");
+        instruction(Instru.Instruction_33());
+        setCount(count);
+        dispatch(enableDisableRadio(false));
+        
+      }, 3500);
+      //instruction(Instru.Instruction_33());
+      //setMsg("Tides formed due to gravitional pull of moon and sun");
+      //setTextCollapse(true);
       //localStorage.clear();
       setEarth1(neap22);
     }
@@ -646,14 +670,15 @@ useEffect(()=>
         </Collapse>
       </div> */}
        <div className="d-flex justify-content-center align-content-center">
-      <Collapse in={textCollapse} dimension="height" >
+      {/* <Collapse in={textCollapse} dimension="height" >
           <div id="example-collapse-text">
             <Card className="alert alert-success fw-bold" style={{height:"65%",fontFamily:"arial",fontSize:"1.2vw"}}>
               {msg}
             </Card>
            
           </div>
-        </Collapse>
+        </Collapse> */}
+        <p style={{fontSize: "1.2vw",fontFamily:"arial"}}>{msg}</p>
      </div>
       {/* <p style={{fontFamily="arial" fontSize="1.2vw"}}>{msg}</p> */}
       {/* <Button onClick={()=>{
@@ -670,112 +695,4 @@ useEffect(()=>
 
 export default MainSpringNeap1;
 
-//     <div style={{ height: "100%" }}>
-//       <div className="d-flex " style={{ height: "100%" }}>
 
-//            {/* first vertical div */}
-//         <div
-//           className="bg-info col-3 d-flex align-items-center justify-content-center"
-//           style={{ height: "100%" }}
-//         >
-//           <img
-//             className=""
-//             style={{
-//               backgroundRepeat: "no-repeat",
-//               backgroundSize: "cover",
-//               maxHeight: "100%",
-//               marginTop: "10%",
-//             }}
-//             src={sun}
-//             alt="Logo"
-//           />
-//         </div>
-
-//           {/* second vertical div */}
-//         <div className="bg-warning col-3 d-flex align-items-center justify-content-center" >
-//           <div className="bg-success " style={{ height: "33%",width:"100%" }}>
-//               123
-//           </div>
-//         </div>
-
-//         {/* third vertical div - inside again three div */}
-//         <div  className="bg-success col-3" >
-//           <div id="id2" className="bg-success "  style={{ height: "33%" }} onDragOver={(e) => onDragOver(e)} onDrop={(e) => drop(e,'1')}>
-//           <img
-
-//                 className=""
-//                 style={{
-//                   backgroundRepeat: "no-repeat",
-//                   backgroundSize: "cover",
-//                   maxHeight: "100%",
-//                   // maxWidth: "100%",
-//                   // marginTop: "10%",
-//                 }}
-//                 src={img_two}
-//                 alt="Logo"
-
-//               />
-
-//           </div>
-//           {/* earth div */}
-//           <div className="bg-dark d-flex align-items-center justify-content-center" style={{ height: "34%" }}>
-//             <img
-//               className=""
-//               style={{
-//                 backgroundRepeat: "no-repeat",
-//                 backgroundSize: "cover",
-//                 maxHeight: "100%",
-//                 // marginTop: "10%",
-//               }}
-//               src={earth}
-//               alt="Logo"
-//             />
-//           </div>
-
-//           <div className="bg-success " style={{ height: "33%" }}>123</div>
-//         </div>
-
-//         {/* fourth vertical div -again inside 2 div */}
-//         <div style={{height:"100%"}}>
-//         <div id="id1" className="bg-dark col-12 d-flex align-items-center justify-content-center" style={{height:"33%"}} draggable
-//              onDragStart={(e) => dragStart(e,{stars2} ,"0")}
-// >
-
-//             <img
-
-//                 id="img_one_id"
-//                 className=""
-//                 style={{
-//                   backgroundRepeat: "no-repeat",
-//                   backgroundSize: "cover",
-//                   maxHeight: "100%",
-//                   // marginTop: "10%",
-//                 }}
-//                 src={moon}
-//                 alt="Logo"
-
-//               />
-
-//         </div>
-//         <div id="id2" className="bg-success " style={{height:"33%"}} onDragOver={(e) => onDragOver(e)} onDrop={(e) => drop(e,'0')}
-//              onDragStart={(e) => dragStart(e,{stars2} ,"1")}>
-//         <img
-//                 id="img_two_id"
-//                 className=""
-//                 style={{
-//                   backgroundRepeat: "no-repeat",
-//                   backgroundSize: "cover",
-//                   maxHeight: "100%",
-//                   // maxWidth: "100%",
-//                   // marginTop: "10%",
-//                 }}
-//                 src={img_one}
-//                 alt="Logo"
-
-//               />
-//         </div>
-// </div>
-
-//       </div>
-
-//     </div>

@@ -3,84 +3,85 @@ import React from "react";
 const expression = () => {
   return (
     <>
-      Drag the moon to its orbit and observe the positions of moon.
+      <p style={{fontSize: "1.2vw",fontFamily:"arial"}}>Drag the moon to the earth's orbit and observe the positions of the moon.</p>
     </>
   );
 };
 
 const Instruction_1 = () => {
-  return <div>Click on "Next" button.</div>;
+  return <p style={{fontSize: "1.2vw",fontFamily:"arial"}}>Click on "Next" button.</p>;
 };
 
 const Instruction_2 = () => {
   return (
-    <ul>
-      <li> Drag the moon to see the effect of full moon on earth.</li>
+    <>
+      <p style={{fontSize: "1.2vw",fontFamily:"arial"}}> Drag the moon to see the effect of full moon on earth.</p>
      
-    </ul>
+    </>
   );
 };
 
 const Instruction_33 = () => {
   return (
-    <ul>
-      <li> Select the correct option.</li>
+    <>
+      {/* <li> Select the correct option.</li> */}
+      <p style={{fontSize: "1.2vw",fontFamily:"arial"}}> Answer the given question.</p>
      
-    </ul>
+    </>
   );
 };
 
 
 const Instruction_44 = () => {
   return (
-    <ul>
-      <li> Select the correct option(you can see the hint by clicking on hint button).</li>
+    <>
+      <p style={{fontSize: "1.2vw",fontFamily:"arial"}}> Select the correct option(you can see the hint by clicking on hint button).</p>
      
-    </ul>
+    </>
   );
 };
 
 const Instruction_3 = () => {
   return (
-    <ul>
-      <li>
+    <>
+      <p style={{fontSize: "1.2vw",fontFamily:"arial"}}>
       Drag the moon to see the effect of last quarter moon on earth.
-      </li>
-    </ul>
+      </p>
+    </>
   );
 };
 
 const Instruction_4 = () => {
   return (
-    <ul>
-      <li>
+    <>
+      <p style={{fontSize: "1.2vw",fontFamily:"arial"}}>
       Drag the moon to see the effect of new moon on earth.
-      </li>
-    </ul>
+      </p>
+    </>
   );
 };
 
 const Instruction_5 = () => {
   return (
-    <ul>
-      <li>Drag the moon to see the effect of first quarter moon on earth.</li>
-    </ul>
+    <>
+      <p style={{fontSize: "1.2vw",fontFamily:"arial"}}>Drag the moon to see the effect of first quarter moon on earth.</p>
+    </>
   );
 };
 
 const Instruction_6 = () => {
   return (
-    <ul>
-      <li>Click on "Next" button .</li>
-    </ul>
+    <>
+      <p style={{fontSize: "1.2vw",fontFamily:"arial"}}>Activity completed successfully.</p>
+    </>
   );
 };
 
 const Instruction_7 = () => {
   return (
-    <ul>
-      <li>Click on "Next" button to see conclusion .</li>
-    </ul>
+    <>
+      <p style={{fontSize: "1.2vw",fontFamily:"arial"}}>Click on "Next" button to see conclusion .</p>
+    </>
   );
 };
 

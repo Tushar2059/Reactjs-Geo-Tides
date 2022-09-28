@@ -1,10 +1,18 @@
-import React from 'react'
+import React from "react";
 import { ListItemText } from "@mui/material";
 const ActStartPopupContent = () => {
   return (
-    <>
-    <ListItemText sx={{ display: 'list-item' }}>
-      Ensure you read this guide from start to finish.
+    <div>
+      <ListItemText sx={{ display: "list-item" }}>Tides.</ListItemText>
+      <ListItemText sx={{ display: "list-item" }}>High tides.</ListItemText>
+      <ListItemText sx={{ display: "list-item" }}>low tides.</ListItemText>
+      <ListItemText sx={{ display: "list-item" }}>
+        {" "}
+        Phases of the Moon
+      </ListItemText>
+
+      {/* <ListItemText sx={{ display: 'list-item' }}>
+     Ensure you read this guide from start to finish.
     </ListItemText>
     <ListItemText sx={{ display: 'list-item' }}>
       {" "}
@@ -31,9 +39,9 @@ const ActStartPopupContent = () => {
       If you dont know the answer you may skip the question and If the
       question is attemted you cannot attemt it again. The score and timing is
       displayed on top of the screen
-    </ListItemText>
-  </>
-  )
-}
+    </ListItemText> */}
+    </div>
+  );
+};
 
-export default ActStartPopupContent
+export default ActStartPopupContent;

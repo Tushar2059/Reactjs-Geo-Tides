@@ -22,7 +22,7 @@ const Footercomp = ({ footheight, instruction ,changeNextFlag,instructionFoot}) 
   const submitoperation = () => {
     console.log("hello click");
    
-    if(localStorage.getItem("count")=="1")
+    if(localStorage.getItem("count")=="1" && localStorage.getItem("count1")=="1")
     //if(true)
    {
     
@@ -30,6 +30,7 @@ const Footercomp = ({ footheight, instruction ,changeNextFlag,instructionFoot}) 
      // instructionFoot(Instru.Instruction_2());
      Instru.Instruction_2();
       localStorage.removeItem("dispImg");
+      localStorage.removeItem("count1");
       localStorage.setItem("moonDrag",1);
      // setNextButton(true); // next button disabled
      // navigate("/letusverify/spring-neap-tides");
@@ -59,7 +60,8 @@ const Footercomp = ({ footheight, instruction ,changeNextFlag,instructionFoot}) 
           display: "block",
         }}
       >
-        <div className="col-11 d-flex align-items-center fw-normal fs-5">
+        <div className="col-11 d-flex align-items-center fw-normal fs-5" >
+        <p style={{fontWeight:"bold",fontSize: "1.2vw",fontFamily:"arial"}}>Instruction:&nbsp; </p>
           {instruction}
         </div>
       </div>

@@ -27,6 +27,9 @@ import { Modal } from "react-bootstrap";
 import parse from "html-react-parser";
 //import { MathComponent } from "mathjax-react";
 import QuestionStatusUpdate from "./QuestionStatusUpdate";
+import QuestionExplanation from "./QuestionExplanation";
+import QuitExamAlert from "./QuitExamAlert";
+import ExamFinalScoreStats from "./ExamFinalScoreStats";
 import Headcomp from "../MajorComponents/Headcomp";
 
 import "../MajorComponents/Mid.css"
@@ -67,12 +70,26 @@ class Play extends React.Component {
       attemptedQueStatus: [],
       showModal: false,
       showModalQuitExam: false,
+      showModalExamScore: false,
       optionChoosen: "",
       changeBackColor: [false, false, false, false],
       noOfQuesList: Array(questions.length).fill(-1),
       noOfAttemptList: Array(questions.length).fill(0),
     };
     this.interval = null;
+  }
+
+  // Function to update state
+  handleExplnationUpdate = (statusExplanationModal) => {
+    this.setState({ showModal : statusExplanationModal });
+  }
+
+  handleAlertUpdate = (statusAlertModal) => {
+    this.setState({ showModalQuitExam : statusAlertModal });
+  }
+
+  handleScoreUpdate = (statusScoreModal) => {
+    this.setState({ showModalExamScore : statusScoreModal });
   }
 
   displayQuestions = (
@@ -149,8 +166,8 @@ class Play extends React.Component {
   };
 
   componentDidMount() {
-    const { questions, currentQuestion, nextQuestion, previousQuestion } =
-      this.state;
+    const { questions, currentQuestion, nextQuestion, previousQuestion } = this.state;
+
     this.displayQuestions(
       questions,
       currentQuestion,
@@ -278,8 +295,7 @@ class Play extends React.Component {
         navigator.vibrate(1000); // vibrate screen on wrong answer
 
         toast.error("Wrong Answer !!!", {
-          position: "top-center",
-          //autoClose: 1700,
+          position: "top-center", autoClose: 500,
         });
 
         //display alert message ... !!!
@@ -388,12 +404,13 @@ class Play extends React.Component {
 
   correctAnswer = () => {
     toast.success("Correct Answer !!!", {
-      position: "top-center", //autoClose: 1700,
+      position: "top-center", autoClose: 500,
     });
 
     this.setState(
       (prevState) => ({
-        score: prevState.score + 1,
+        //score: prevState.score + 1,
+        score: prevState.score + this.state.currentQuestion.maxMarks,
         correctAnswers: prevState.correctAnswers + 1,
         //currentQuestionIndex: prevState.currentQuestionIndex + 1,
         //numberOfAnsweredQuestions: prevState.numberOfAnsweredQuestions + 1,
@@ -495,8 +512,7 @@ class Play extends React.Component {
 
       navigator.vibrate(1000); // vibrate screen on wrong answer
       toast.error("Wrong Answer !!!", {
-        position: "top-center",
-        //autoClose: 1700,
+        position: "top-center", autoClose: 500,
       });
 
       //display alert message ... !!!
@@ -564,21 +580,6 @@ class Play extends React.Component {
         "Explanation : " + "\n\n" + explantion + "\n\n" + "Please Try Again !!"
       );
     }
-
-    // if(this.state.noOfAttempts > this.state.currentQuestion.noOfAttempts){
-    //     alert("Explanation : " + "\n\n" + explantion + "\n\n" + "You Reached Maximum Attempts !!"
-    //     + "\n\n" + "Please Attempt Next Question");
-    // }else{
-    //     alert("Explanation : " + "\n\n" + explantion + "\n\n" + "Please Try Again !!");
-    // }
-  };
-
-  handleClose = () => {
-    this.setState({ showModal: false });
-  };
-  handleShow = () => {
-    this.setState({ showModal: true });
-    console.log(" Clicked Modal ... !!! " + this.state.showModal);
   };
 
   render() {
@@ -634,30 +635,36 @@ class Play extends React.Component {
                 <div className="lifeline-container fw-bold">
                   <p>
                     {" "}
-                    <span>Questions Attempted</span>{" "}
-                    <span className="lifeline"></span>{" "}
-                  </p>
-                  {/*<p><span className="mdi mdi-set-center mdi-24px lifeline-icon"></span><span className="lifeline">2</span></p>*/}
-                  {/*<p><span className="mdi mdi-lightbulb-on-outline mdi-24px lifeline-icon" onClick={this.handleHints} ></span><span className="lifeline">5</span></p>*/}
-                  <p>
-                    {" "}
-                    <span>Score : </span> <span>{score}</span>{" "}
-                  </p>
-                </div>
-                <div className="lifeline-container text-success fw-bold">
-                  <p>
-                    {" "}
-                    <span>
+                    <span>Questions Attempted : </span>{" "}
+                    <span className="lifeline"></span>{" "} 
+                    <span className="text-success">
                       {" "}
                       {currentQuestionIndex + 1} of {numberOfQuestions}{" "}
                     </span>{" "}
                   </p>
-                  <p>
+                  {/*<p><span className="mdi mdi-set-center mdi-24px lifeline-icon"></span><span className="lifeline">2</span></p>*/}
+                  {/*<p><span className="mdi mdi-lightbulb-on-outline mdi-24px lifeline-icon" onClick={this.handleHints} ></span><span className="lifeline">5</span></p>*/}
+                  <p className="text-success">
                     <span>
                       {" "}
                       {time.minutes}:{time.seconds}{" "}
                     </span>
                     <span className="mdi mdi-clock-outline mdi-24px"></span>
+                  </p>  
+                </div>
+                <div className="lifeline-container text-success fw-bold">
+                  <p>
+                  {" "}
+                    <span className="text-black"> Question Marks: </span>{" "}
+                    <span className="lifeline"></span>{" "} 
+                    <span>
+                      {" "}
+                      {currentQuestion.maxMarks} {" "}
+                    </span>{" "}
+                  </p>
+                  <p>
+                    {" "}
+                    <span className="text-black">Score : </span> <span>{score}</span>{" "}
                   </p>
                 </div>
 
@@ -697,7 +704,7 @@ class Play extends React.Component {
                         id="option-a"
                         style={{
                           backgroundColor:  this.state.changeBackColor[0] ? '#4da6ff' : '#99ccff',
-                          display: currentQuestion.optionA === "" && 'none',
+                          display: currentQuestion.optionA === "" && currentQuestion.isOptionsHaveImages[0] === false ? 'none' : null,
                         }}
                       >
                         {" "}
@@ -720,7 +727,7 @@ class Play extends React.Component {
                         id="option-b"
                         style={{
                           backgroundColor:  this.state.changeBackColor[1] ? '#4da6ff' : '#99ccff',
-                          display: currentQuestion.optionB === "" && 'none',
+                          display: currentQuestion.optionB === "" && currentQuestion.isOptionsHaveImages[1] === false ? 'none' : null,
                         }}
                       >
                         {" "}
@@ -746,7 +753,7 @@ class Play extends React.Component {
                         id="option-c"
                         style={{
                           backgroundColor:  this.state.changeBackColor[2] ? '#4da6ff' : '#99ccff',
-                          display: currentQuestion.optionC === "" && 'none',
+                          display: currentQuestion.optionC === "" && currentQuestion.isOptionsHaveImages[2] === false ? 'none' : null,
                         }}
                       >
                         {" "}
@@ -769,7 +776,7 @@ class Play extends React.Component {
                         id="option-d"
                         style={{
                           backgroundColor:  this.state.changeBackColor[3] ? '#4da6ff' : '#99ccff',
-                          display: currentQuestion.optionD === "" && 'none',
+                          display: currentQuestion.optionD === "" && currentQuestion.isOptionsHaveImages[3] === false ? 'none' : null,
                         }}
                       >
                         {" "}
@@ -916,122 +923,35 @@ class Play extends React.Component {
           </div>
         </div>
 
-        {/*<Button variant="primary" onClick={this.handleShow}>
-  Click Modal
-  </Button>*/}
-
-
         {/* Modal For Score and Navigate to Home(/letusverify) */}
-        <Modal size="sm"
-          show={this.state.showModalExamScore ? true : false}
-          onHide={() => {
-            this.setState({showModalExamScore : false, redirect: true });
-          }}
-          centered
-        >
-          <Modal.Header closeButton>
-            <Modal.Title>Result</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <h6> Your Scored {this.state.score} out of {this.state.numberOfQuestions} </h6>
-          </Modal.Body>
-          <Modal.Footer style={{ justifyContent: "center" }}>
-            <Button
-              variant="contained" color="primary" size="small"
-              onClick={() => {
-                this.setState({ redirect: true });
-              }}
-            >
-              Continue
-            </Button>
-            {/* <Button
-              variant="contained" color="secondary" size="small"
-              onClick={() => {
-                this.setState({ showModalExamScore: false });
-              }}
-            >
-              Cancel
-            </Button> */}
-            {/*<Button variant="primary" onClick={this.handleClose}>
-        Save Changes
-    </Button>*/}
-          </Modal.Footer>
-        </Modal>
+        {this.state.showModalExamScore ? <ExamFinalScoreStats 
+            propsScore={{ showModalExamScore: this.state.showModalExamScore,
+                          scoreUpdate: this.handleScoreUpdate, 
+                          score: this.state.score,
+                          questions: this.state.questions,
+                          noOfQuesList: this.state.noOfQuesList,
+                          time: this.state.time
+                      }} /> : null}
 
+        {/* ======== Explanation for Quit Exam ======== */}
+        {this.state.showModalQuitExam && 
+            <QuitExamAlert 
+                propsAlert = {{showModalQuitExam: this.state.showModalQuitExam, 
+                              score: this.state.score,
+                              alertUpdate: this.handleAlertUpdate,
+                              showModalExamScore: this.state.showModalExamScore,
+                              scoreUpdate: this.handleScoreUpdate,
+                            }} />
+        }
 
+        {/* ======== Explanation for Wrong Attempts ======== */}
+        {this.state.showModal && 
+            <QuestionExplanation 
+                propsExlanation={{showModal: this.state.showModal, currentQuestion:currentQuestion, 
+                noOfAttemptList: this.state.noOfAttemptList, currentQuestionIndex: currentQuestionIndex, 
+                ExplnationUpdate: this.handleExplnationUpdate}} />
+        }
 
-
-
-        {/* Modal for Qeustion Attempt Status */}
-        <Modal size="sm"
-          show={this.state.showModalQuitExam ? true : false}
-          onHide={() => {
-            this.setState({ showModalQuitExam: false });
-          }}
-          centered
-        >
-          <Modal.Body>
-            <h6> Are you sure, You want to Quit ?? </h6>
-          </Modal.Body>
-          <Modal.Footer style={{ justifyContent: "space-around" }}>
-            <Button
-              variant="contained" color="primary" size="small"
-              onClick={() => {
-                this.setState({ showModalQuitExam: false, showModalExamScore: true });
-              }}
-            >
-              Yes
-            </Button>
-            <Button variant="contained" color="secondary" size="small"
-              onClick={() => {  this.setState({ showModalQuitExam: false });  }}
-            >   Cancel    </Button>
-            
-            {/*<Button variant="primary" onClick={this.handleClose}>
-        Save Changes
-    </Button>*/}
-          </Modal.Footer>
-        </Modal>
-
-        {/* Modal for Qeustion Attempt Status */}
-        <Modal
-          show={this.state.showModal ? true : false}
-          onHide={this.handleClose}
-          centered
-        >
-          <Modal.Header closeButton>
-            <Modal.Title>Explanation</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <p>{parse("" + currentQuestion.explanation)}</p>
-
-            {currentQuestion.explanationHasImg ? (
-              <img
-                src={require(`../../Img/OptionImg/${currentQuestion.explanationImg}`)}
-                alt="cannot load img"
-              />
-            ) : null}
-
-            {this.state.noOfAttemptList[this.state.currentQuestionIndex] >=
-            this.state.currentQuestion.noOfAttempts ? (
-              <div className="DisplayExplanationMssg">
-                <p>You Reached Maximum Attempts !!</p>
-                <p>Please Attempt Next Question</p>
-              </div>
-            ) : (
-              <div className="DisplayExplanationMssg">
-                <p>Please Try Again !! !!</p>
-              </div>
-            )}
-          </Modal.Body>
-          <Modal.Footer>
-            <Button variant="contained" color="primary"  size="small" onClick={this.handleClose}>
-              Close
-            </Button>
-            {/*<Button variant="primary" onClick={this.handleClose}>
-        Save Changes
-    </Button>*/}
-          </Modal.Footer>
-        </Modal>
       </div>
     );
   }

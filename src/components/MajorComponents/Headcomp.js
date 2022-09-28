@@ -65,7 +65,7 @@ const Headcomp = ({ sidebarvisible,hintVisible }) => {
             background: "skyblue",
           }}
         >
-          <div className=" fw-bold" style={{ fontSize: "1.4vw" }}>
+          <div className=" fw-bold" style={{ fontSize: "1.4vw",fontFamily:"arial" }}>
             Geography:{" "}
             <span className="fw-normal">
               {/* {Instru.default()} */}
