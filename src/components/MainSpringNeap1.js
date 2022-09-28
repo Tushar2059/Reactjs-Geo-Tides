@@ -1,17 +1,18 @@
 import React, { useState } from "react";
-import sun from "../Img/twodsun.jpg";
+//import sun from "../Img/twodsun.jpg";
+import sun from "../Img/sun2d1.png";
 //import sun from "../Img/sungif3.gif";
 import earth from "../Img/e34.png";
-import moon from "../Img/moon2d.jpg";
+//import moon from "../Img/moon2d.jpg";
 import stars2 from "../Img/stars3.jpg";
-import stars1 from "../Img/stars1.jpg";
-import arrow from "../Img/rightarrow.jpg";
+//import stars1 from "../Img/stars1.jpg";
+
 import { toast } from "react-toastify";
 import * as Instru from "./MajorComponents/Instruction";
 import { Button,} from "@mui/material";
 import { fontFamily, fontSize } from "@mui/system";
 import { fontGrid } from "@mui/material/styles/cssUtils";
-import spring from "../Img/firstgif1.gif";
+
 import { Card, Collapse, Fade } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { enableDisableRadio, setShowHintButton, updateRestart } from "../Store/Store";
@@ -23,7 +24,7 @@ import spring22 from "../Img/b3.gif";
 import neap22 from "../Img/b4.gif";
 //import earth from "../Img/earthwithsea.jpg";
 
-const MainSpringNeap1 = ({ instruction, changeNextFlag,validation }) => {
+const MainSpringNeap1 = ({ instruction, changeNextFlag,validation,changeMoonText }) => {
   //   let [count, setCount] = useState(0);
   //   const [img_one, setImgOne] = useState(stars2);
   //     const [img_two, setImgTwo] = useState(stars2);
@@ -263,6 +264,7 @@ useEffect(()=>
     if (id == 1 && count == 1 && ev.target.src != src1 && validation==0) {
       //alert("in if drop full");
       // alert()
+      changeMoonText(false);
       dispatch(setShowHintButton(false));
       document.getElementById(data).style.display = "none";
       // document.getElementById(data).src="../Img/stars3.jpg";
@@ -311,11 +313,12 @@ useEffect(()=>
     var data = ev.dataTransfer.getData("id");
     var src2 = ev.dataTransfer.getData("src");
     //document.getElementById(data).style.display="none"
-    dispatch(enableDisableRadio(true));
+    
     console.log("Count in drop Last 1 =" + count);
     //dispatch(setShowHintButton(false));  
     if (id == 2 && count == 2 && validation==1) {
       dispatch(setShowHintButton(false));
+      dispatch(enableDisableRadio(true));
       document.getElementById(data).style.display = "none";
       setPath2(src2);
       console.log("in last " + src2);
@@ -366,11 +369,12 @@ useEffect(()=>
     var data = ev.dataTransfer.getData("id");
     var src3 = ev.dataTransfer.getData("src");
     //document.getElementById(data).style.display="none"
-    dispatch(enableDisableRadio(true));
+   
     console.log("Count in drop Last 1 =" + count);
    // dispatch(setShowHintButton(false));  
     if (id == 3 && count == 3 && validation==2) {
       dispatch(setShowHintButton(false));
+      dispatch(enableDisableRadio(true));
       document.getElementById(data).style.display = "none";
       setPath3(src3);
       console.log("in last " + src3);
@@ -419,12 +423,13 @@ useEffect(()=>
     var data = ev.dataTransfer.getData("id");
     var src4 = ev.dataTransfer.getData("src");
     //document.getElementById(data).style.display="none"
-    dispatch(enableDisableRadio(true));
+    
     console.log("abcdefgh" + stars2);
     console.log("Count in drop Last 1 =" + count);
    // dispatch(setShowHintButton(false));  
     if (id == 4 && count == 4 && validation==3) {
       dispatch(setShowHintButton(false));
+      dispatch(enableDisableRadio(true));
       document.getElementById(data).style.display = "none";
       setPath4(src4);
       console.log("in last " + src4);

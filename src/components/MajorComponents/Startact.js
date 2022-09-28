@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import LetsVerify from "../../Img/letusverify.png";
+import LetsVerify from "../../Img/letsGoWorkbench.png";
 import * as Instru from "./Instruction";
 import InfoPopup from "./InfoPopup";
 import ActStartPopupContent from "../ActStartPopupContent";

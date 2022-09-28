@@ -15,6 +15,7 @@ const Springneaptides1 = () => {
   var [validation,setValidation]=useState(0);
 
   var [instr,setChangeInstruction]=useState(Instru.default());
+  let [moonText, setMoonText] = useState(true);
  
   useEffect(()=>{
     if(localStorage.getItem("count")==1)
@@ -36,8 +37,8 @@ const Springneaptides1 = () => {
 
     <Middlecomp
       midheight="80%"
-      midcontent={<SprinneaptidesMidContent1 validation={validation} flag={nextFlag} instruction={setChangeInstruction} changeNextFlag={flag=>setNextFlag(flag)}/>}
-      feedback={<Feedback1 changeValidation={(e)=>{setValidation(e)}} flag={nextFlag} instruction={setChangeInstruction}/>}
+      midcontent={<SprinneaptidesMidContent1 validation={validation} flag={nextFlag} instruction={setChangeInstruction} changeNextFlag={flag=>setNextFlag(flag)} changeMoonText={flag=>setMoonText(flag)}/>}
+      feedback={<Feedback1 changeValidation={(e)=>{setValidation(e)}} flag={nextFlag} instruction={setChangeInstruction} moonText={moonText}/>}
       //midcontent={<MainSpringNeap1 />}
       //feedback={<Feedback1 />}
       toolvisible="hidden"

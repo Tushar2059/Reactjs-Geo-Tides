@@ -26,7 +26,7 @@ const BackNextBar = ({
      localStorage.removeItem("moonDrag");
       localStorage.setItem("dispImg",1);
       //dispatch(setShowHintButton(false)); 
-      
+      dispatch(resetAll());
        navigate(-1);
     }
     else
@@ -43,7 +43,9 @@ const BackNextBar = ({
   {
     localStorage.clear();
     dispatch(resetAll());
+   
     navigate("/letusverify/");
+    //document.location.reload(false);
   }
 
   return (

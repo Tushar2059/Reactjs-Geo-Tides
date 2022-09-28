@@ -22,18 +22,18 @@ const HintPopup = ({ openHintDialog,closeHintDialog }) => {
     <>
       <Dialog open={openHintDialog} TransitionComponent={Transition} >
         <DialogContent>
-          <Typography>This is hint popup</Typography>
+          {/* <Typography>This is hint popup</Typography> */}
           {(firstStore?.hintPopup)==1 && (
-            <Typography>1.During full moon the sun, the earth and the moon come to lie in a straight line it causes - Spring tide</Typography>
+            <Typography>During full moon the sun, the earth and the moon come to lie in a straight line it causes - Spring tide</Typography>
           )}
           {(firstStore?.hintPopup)==2 && (
-            <Typography>2.During last quarter moon, the sun, the earth and the moon come in right angle it causes - Neap tide</Typography>
+            <Typography>During last quarter moon, the sun, the earth and the moon come in right angle it causes - Neap tide</Typography>
           )}
           {(firstStore?.hintPopup)==3 && (
-            <Typography>3.During New moon the sun, the earth and the moon come to lie in a straight line it causes - Spring tide</Typography>
+            <Typography>During New moon the sun, the earth and the moon come to lie in a straight line it causes - Spring tide</Typography>
           )}
           {(firstStore?.hintPopup)==4 && (
-            <Typography>4.During first quarter moon, the sun, the earth and the moon come in right angle it causes - Neap tide</Typography>
+            <Typography>During first quarter moon, the sun, the earth and the moon come in right angle it causes - Neap tide</Typography>
           )}
          
           

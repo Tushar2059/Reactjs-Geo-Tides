@@ -7,11 +7,11 @@ const QuizPopupContent = () => {
       <ListItemText sx={{ display: "list-item" }}>
         Ensure you read this guide from start to finish.
       </ListItemText>
-      <ListItemText sx={{ display: "list-item" }}>
+      {/* <ListItemText sx={{ display: "list-item" }}>
         {" "}
         The Quiz has a duration of 10 minutes and ends as soon as your time is
         elapses.
-      </ListItemText>
+      </ListItemText> */}
 
       <ListItemText sx={{ display: "list-item" }}>
         After clicking on Button "Agree" quiz will start alongwith time
@@ -22,7 +22,7 @@ const QuizPopupContent = () => {
       </ListItemText>
       <ListItemText sx={{ display: "list-item" }}>
         Select the option which best answers the question by cliking (or
-        selectig) it.
+        selecting) it.
       </ListItemText>
       <ListItemText sx={{ display: "list-item" }}>
         If the question is fill in the blanks type then it is necessary to drag

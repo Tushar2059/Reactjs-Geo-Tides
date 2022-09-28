@@ -9,7 +9,7 @@ import worldmap3 from "../Img/worldmap3.jpg";
 
 import moon2 from "../Img/moon2.jpg";
 import sun2 from "../Img/sun2.jpg";
-import spring from "../Img/springif.gif"
+//import spring from "../Img/springif.gif"
 //import stars from "../../../Img/stars.jpg";
 //import pic1 from "../component/images/pic1.jpg"
 import { Canvas,useLoader,useFrame, useThree } from '@react-three/fiber';
@@ -163,7 +163,7 @@ useFrame(() => {
     const earth1 = useLoader(TextureLoader, worldmap3);
     const sun1 = useLoader(TextureLoader, sun2);
     const moon1 = useLoader(TextureLoader, moon2);
-    const spring1 = useLoader(TextureLoader, spring);
+    //const spring1 = useLoader(TextureLoader, spring);
 
    
  

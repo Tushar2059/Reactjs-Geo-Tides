@@ -11,7 +11,7 @@ import { useNavigate } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 
 
-const SprinneaptidesMidContent1 = ({flag,instruction,changeNextFlag,validation}) => {
+const SprinneaptidesMidContent1 = ({flag,instruction,changeNextFlag,validation,changeMoonText}) => {
   const navigate=useNavigate();
   return (
     <div className="" style={{ width:"100%" }}>
@@ -28,7 +28,7 @@ const SprinneaptidesMidContent1 = ({flag,instruction,changeNextFlag,validation})
     {/* {(flag==1 || flag==2 || flag==3 || flag==4 || flag==5)
       && (<MainSpringNeap1 instruction={instruction} changeNextFlag={changeNextFlag}/>)} */}
 
-      <MainSpringNeap1 instruction={instruction} changeNextFlag={changeNextFlag} validation={validation}/>
+      <MainSpringNeap1 instruction={instruction} changeNextFlag={changeNextFlag} validation={validation} changeMoonText={changeMoonText}/>
     <ToastContainer></ToastContainer>
    
     </div>

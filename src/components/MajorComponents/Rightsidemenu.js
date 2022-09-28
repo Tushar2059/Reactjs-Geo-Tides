@@ -57,7 +57,7 @@ const Rightsidemenu = () => {
         <Navbar key={expand} expand={expand} className="mb-3">
           <Container fluid className="">
             <Navbar.Brand href="#"></Navbar.Brand>
-            <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`}  />
+            <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-${expand}`}
               aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}

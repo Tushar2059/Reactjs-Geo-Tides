@@ -5,10 +5,10 @@ import Draggable from "react-draggable";
 //import sun from "../Img/twodsun.jpg";
 //import earth from "../Img/earth.png";
 
-import moon from "../Img/moonW.jpg";
-import sun from "../Img/sunwhite.jpg";
-import earth from "../Img/earthwhite.jpg";
-import moonDrag from "../Img/moon2d.jpg";
+//import moon from "../Img/moonW.jpg";
+import sun from "../Img/sun2d1.png";
+import earth from "../Img/earth2d1.png";
+import moonDrag from "../Img/moon2d1.png";
 import { Button, Card, Collapse, Fade, Form } from "react-bootstrap";
 import { toast } from "react-toastify";
 import * as Instru from "./MajorComponents/Instruction";
@@ -20,6 +20,7 @@ const Feedback1 = (props) => {
   let dispatch = useDispatch();
   // let {firstStore}=useSelector((state)=>{state});
   let {firstStore}= useSelector((state) => state);
+  //let [moonText, setMoonText] = useState(true);
   let [flag1, setFlag1] = useState(false);
   let [flag2, setFlag2] = useState(false);
   let [flag3, setFlag3] = useState(false);
@@ -45,6 +46,7 @@ const Feedback1 = (props) => {
   // };
 
   function drag(ev) {
+   
      dispatch(incrementHintPopup(1));
      dispatch(setShowHintButton(false));   
     ev.dataTransfer.setData("id", ev.target.id);
@@ -136,14 +138,14 @@ const Feedback1 = (props) => {
           <img
             className="img-fluid"
             style={{
-              maxHeight: "100%",
-              maxWidth: "50%",
+              maxHeight: "25%",
+              maxWidth: "30%",
               marginTop: "15%",
-              marginLeft: "20%",
+              marginLeft: "30%",
               //width: "7rem",
               //height: "6rem",
             }}
-            src={moon}
+            src={moonDrag}
             alt="Logo"
             //onClick={handleChange}
           />
@@ -183,6 +185,7 @@ const Feedback1 = (props) => {
               alt="Logo"
               //onClick={handleChange}
             />
+            {props.moonText && (<p className="text-center">Moon</p>)}
           </div>
         )}
 
