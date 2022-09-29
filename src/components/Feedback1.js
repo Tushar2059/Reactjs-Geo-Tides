@@ -100,48 +100,66 @@ const Feedback1 = (props) => {
   };
 
   return (
-    <div>
+    <div style={{height:"100%",width:"100%"}}>
       {/* Sun ,Earth ,Moon image for reference for flag 0 (zero) */}
       {/* {(props.flag == 0)  && ( */}
       {/* {(localStorage.getItem("count")!="1")  && ( */}
       {localStorage.getItem("dispImg") == "1" && (
-        <div>
-          <img
-            className="img-fluid"
+        <div className="bg-inf " style={{height:"100%",width:"100%"}}>
+        {/* Sun */}
+        <div className=" bg-warnin   " style={{height:"40%",width:"100%"}}>
+        <div className="d-flex justify-content-center">
+        <img
+            className="img-fluid d-flex align-items-center"
             style={{
               maxHeight: "100%",
               maxWidth: "70%",
-              marginTop: "3%",
-              marginLeft: "10%",
+              //marginTop: "3%",
+              //marginLeft: "10%",
               //width: "9rem",
             }}
             src={sun}
             alt="Logo"
             //onClick={handleChange}
           />
-          <label style={{fontWeight:"bold", fontSize: "1.2vw",fontFamily:"arial"}}>-sun</label>
-          <img
+          </div>
+          <p className="text-center" style={{fontWeight:"bold", fontSize: "1.2vw",fontFamily:"arial"}}>Sun</p>
+
+        </div>
+
+         {/* Earth */}
+        <div className="bg-succes " style={{height:"30%",width:"100%"}}>
+        <div className="d-flex justify-content-center">
+        <img
             className="img-fluid"
             style={{
               maxHeight: "100%",
               maxWidth: "55%",
-              marginTop: "10%",
-              marginLeft: "15%",
+             // marginTop: "10%",
+              //marginLeft: "15%",
               //width: "9rem",
             }}
             src={earth}
             alt="Logo"
             //onClick={handleChange}
           />
-          <label style={{fontWeight:"bold", fontSize: "1.2vw",fontFamily:"arial"}}>-Earth</label>
+          </div>
+          <p className="text-center" style={{fontWeight:"bold", fontSize: "1.2vw",fontFamily:"arial"}}>Earth</p>
 
-          <img
+
+        </div>
+
+
+         {/* Moon */}
+        <div className="bg-dange " style={{height:"30%",width:"100%"}}>
+        <div className="d-flex justify-content-center">
+        <img
             className="img-fluid"
             style={{
               maxHeight: "25%",
               maxWidth: "30%",
               marginTop: "15%",
-              marginLeft: "30%",
+             // marginLeft: "30%",
               //width: "7rem",
               //height: "6rem",
             }}
@@ -149,9 +167,14 @@ const Feedback1 = (props) => {
             alt="Logo"
             //onClick={handleChange}
           />
+          </div>
 
-          <label style={{fontWeight:"bold", fontSize: "1.2vw",fontFamily:"arial"}}>-Moon</label>
+          <p className="text-center" style={{fontWeight:"bold", fontSize: "1.2vw",fontFamily:"arial"}}>Moon</p>
+        
         </div>
+        </div>
+       
+        
       )}
 
       {/* Moon image for dragging for flag 1  *****    */}

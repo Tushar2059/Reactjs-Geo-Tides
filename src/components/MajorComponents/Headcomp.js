@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Rightsidemenu from "./Rightsidemenu";
 import homeImg from "../../Img/homeimg.png";
-import hint from "../../../src/Img/hint.JPG";
+import hint from "../../../src/Img/hint.png";
 import * as Instru from "./Instruction";
 import HomeQuitPopup from "./HomeQuitPopup";
 import { useNavigate } from "react-router-dom";
@@ -80,26 +80,44 @@ const Headcomp = ({ sidebarvisible,hintVisible }) => {
       </div>
 
       <div className="col-2 d-flex">
-        <div className="col-4 bg-warnin">
+        <div className="col-4 bg-inf">
           {/* <Button variant="contained" style={{marginTop:"10%"}} onClick={openHintDialog}>Hint</Button> */}
 
           {/* {(firstStore?.showHintButton) && ( */}
 
           <Button
             disabled={!firstStore?.showHintButton}
-            variant="contained"
-            onClick={openHintDialog}
-            style={{ marginTop: "20%", visibility:hintVisible ,
-             maxWidth: "80%",
-           maxHeight: "80%",
-           minWidth: "40%",
-           minHeight: "40%"
+           // variant="contained"
+           // onClick={openHintDialog}
+            //style={{ marginTop: "20%", visibility:hintVisible ,
+            // maxWidth: "80%",
+           //maxHeight: "80%",
+          // minWidth: "40%",
+           //minHeight: "40%"
       
     
-            }}
+            //}}
            
           >
-            Hint
+          <img
+          className=""
+          style={{
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+            maxHeight: "100%",
+            maxWidth: "100%",
+            cursor: "pointer",
+            marginTop:"15%",
+            visibility:hintVisible
+            
+            //visibility: "hidden"
+          }}
+          src={hint}
+          alt="Logo"
+          onClick={openHintDialog}
+      
+        />
+           
           </Button>
           {/* <img
           className=""

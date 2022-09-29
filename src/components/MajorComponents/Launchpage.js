@@ -3,6 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Link } from "react-router-dom";
 import * as Instru from "./Instruction"
 import backgroundImg from "../../Img/backg.png";
+import start from "../../Img/start.png";
 
 const Launchpage = () => {
 
@@ -42,7 +43,7 @@ const Launchpage = () => {
           </div>
           <div
             className="d-flex justify-content-center align-items-center fw-normal"
-            style={{ height: "10vh", fontSize: "1.8vw",fontFamily: "arial", }}
+            style={{ height: "5vh", fontSize: "1.8vw",fontFamily: "arial", }}
           >
             {/* To verify the algebraic identity {Instru.default()} */}
             To identify spring tides and neap tides.
@@ -59,7 +60,7 @@ const Launchpage = () => {
           
           <div
             className="fw-normal d-flex justify-content-center align-items-center flex-column  "
-            style={{ height: "22vh", fontSize: "1.5vw" }}
+            style={{ height: "15vh", fontSize: "1.5vw" }}
           >
             <div className="text-center">
             1. Student will be able to understand types of tides. {" "}
@@ -75,7 +76,7 @@ const Launchpage = () => {
           style={{ height: "13vh" }}
         >
           <Link to="/letusverify" style={{ textDecoration:"none"  }}>
-            <div
+            {/* <div
             
               className="btn px-5 "
               style={{
@@ -88,7 +89,19 @@ const Launchpage = () => {
               }}
             >
               Start
-            </div>
+            </div> */}
+            <img
+              className="img-fluid"
+              style={{
+                //backgroundRepeat: "no-repeat",
+                //backgroundSize: "cover",
+                 maxHeight: "80%",
+                maxWidth: "80%",
+                //marginTop: "4%",
+              }}
+             src={start}
+              alt="Logo"
+            />
           </Link>
         </div>
       </div>
