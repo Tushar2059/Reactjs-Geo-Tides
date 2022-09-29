@@ -5,13 +5,17 @@ import LetsVerify from "../../Img/letsGoWorkbench.png";
 import * as Instru from "./Instruction";
 import InfoPopup from "./InfoPopup";
 import ActStartPopupContent from "../ActStartPopupContent";
+import { useDispatch } from "react-redux";
+import { resetAll } from "../../Store/Store";
 
 const Startact = () => {
   const [showDialog, setShowDialog] = useState(false);
 
   const navigate = useNavigate();
+  let dispatch = useDispatch();
 
   const openDialog = () => {
+    dispatch(resetAll());        //reset all store variables/states (reqd)
     setShowDialog(true);
   };
 

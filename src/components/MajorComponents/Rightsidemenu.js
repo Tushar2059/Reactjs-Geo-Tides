@@ -14,8 +14,11 @@ import settings from "../../Img/settings.png";
 
 import InfoPopup from "./InfoPopup";
 import QuizPopupContent from "../QuizPopupContent";
+import { useDispatch } from "react-redux";
+import { resetAll } from "../../Store/Store";
 
 const Rightsidemenu = () => {
+  let dispatch = useDispatch();
   const LightTooltip = styled(({ className, ...props }) => (
     <Tooltip {...props} classes={{ popper: className }} />
   ))(({ theme }) => ({
@@ -57,7 +60,7 @@ const Rightsidemenu = () => {
         <Navbar key={expand} expand={expand} className="mb-3">
           <Container fluid className="">
             <Navbar.Brand href="#"></Navbar.Brand>
-            <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
+            <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} onClick={()=>dispatch(resetAll())}/>
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-${expand}`}
               aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}

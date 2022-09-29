@@ -7,17 +7,20 @@ import HomeQuitPopup from "./HomeQuitPopup";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@mui/material";
 import HintPopup from "./HintPopup";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { resetAll } from "../../Store/Store";
 
 const Headcomp = ({ sidebarvisible,hintVisible }) => {
   const [showDialog, setShowDialog] = useState(false);
   const [showHintDialog, setShowHintDialog] = useState(false);
 
   let { firstStore } = useSelector((state) => state);
+  let dispatch = useDispatch();
 
   const navigate = useNavigate();
 
   const openDialog = () => {
+     dispatch(resetAll());  //reset all store variables/states (not reqd)
     setShowDialog(true);
   };
 
@@ -27,6 +30,7 @@ const Headcomp = ({ sidebarvisible,hintVisible }) => {
   };
 
   const onAgree = () => {
+    dispatch(resetAll());  //reset all store variables/states (not reqd)
     navigate("/");
   };
 
