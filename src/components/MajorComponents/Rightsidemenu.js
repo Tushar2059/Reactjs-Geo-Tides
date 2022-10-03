@@ -57,10 +57,10 @@ const Rightsidemenu = () => {
       />
 
       {[false].map((expand) => (
-        <Navbar key={expand} expand={expand} className="mb-3">
+        <Navbar key={expand} expand={expand} className="mb-3" variant="dark">
           <Container fluid className="">
             <Navbar.Brand href="#"></Navbar.Brand>
-            <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} onClick={()=>dispatch(resetAll())}/>
+            <Navbar.Toggle   aria-controls={`offcanvasNavbar-expand-${expand}`} onClick={()=>dispatch(resetAll())} />
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-${expand}`}
               aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}

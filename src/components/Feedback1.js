@@ -208,7 +208,7 @@ const Feedback1 = (props) => {
               alt="Logo"
               //onClick={handleChange}
             />
-            {props.moonText && (<p className="text-center">Moon</p>)}
+            {props.moonText && (<p className="text-center" style={{fontWeight:"bold", fontSize: "1.2vw",fontFamily:"arial"}}>Moon</p>)}
           </div>
         )}
 

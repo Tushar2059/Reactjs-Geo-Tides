@@ -67,6 +67,8 @@ const Headcomp = ({ sidebarvisible,hintVisible }) => {
             height: "90%",
             borderRadius: "25px",
             background: "skyblue",
+            //background: "rgba(255, 255, 255, .45)",
+            backdropFilter: "blur(5px)",
           }}
         >
           <div className=" fw-bold" style={{ fontSize: "1.4vw",fontFamily:"arial" }}>

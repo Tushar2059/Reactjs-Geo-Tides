@@ -9,7 +9,7 @@ const Launchpage = () => {
 
   return (
     <div
-      className="flex-column d-flex justify-content-center align-items-center"
+      className="flex-column d-flex justify-content-center align-items-center "
       style={{
         height: "100vh",
         backgroundImage: "url(" + backgroundImg + ")",
@@ -19,7 +19,7 @@ const Launchpage = () => {
       }}
     >
       <div
-        className="col-12 col-md-9 border border-light border-2 "
+        className="col-12 col-md-9 border border-light border-2"
         style={{
           height: "75vh",
           background: "rgba(255, 255, 255, .45)",
