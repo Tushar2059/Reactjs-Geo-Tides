@@ -182,25 +182,27 @@ const Feedback1 = (props) => {
       {/* { props.flag == 1 && ( */}
       {localStorage.getItem("moonDrag") == "1" &&
         localStorage.getItem("count") == "1" && (
-          <div>
+          <div className="d-flex flex-column">
             {/* {()=>{
           localStorage.removeItem("moonDrag")
          
         // localStorage.clear();
         }} */}
             {/* <h4 className="text-center">Object</h4> */}
+           
+            <div className="d-flex justify-content-center">
             <img
-              className="img-fluid"
+              className="img-fluid "
               id="drag1"
               draggable="true"
               onDragStart={(ev) => {
                 drag(ev);
               }}
               style={{
-                maxHeight: "100%",
-                maxWidth: "50%",
-                marginTop: "10%",
-                marginLeft: "25%",
+                maxHeight: "40%",
+                maxWidth: "30%",
+                marginTop: "20%",
+               // marginLeft: "25%",
                 cursor: "pointer",
                 //width: "9rem",
               }}
@@ -208,6 +210,8 @@ const Feedback1 = (props) => {
               alt="Logo"
               //onClick={handleChange}
             />
+            </div>
+           <br></br>
             {props.moonText && (<p className="text-center" style={{fontWeight:"bold", fontSize: "1.2vw",fontFamily:"arial"}}>Moon</p>)}
           </div>
         )}
@@ -218,7 +222,7 @@ const Feedback1 = (props) => {
         <div className="container  bg-inf d-flex  justify-content-center " style={{height:"100%",fontSize: "1.2vw",fontFamily:"arial"}}>
         <div className="row d-flex align-items-center">
         <div className="col d-flex flex-column border rounded-pill shadow-lg p-5">
-          <p className="text-center fw-bold " style={{fontSize: "1.2vw",fontFamily:"arial"}}>What do you observed?</p>
+          <p className="text-center fw-bold " style={{fontSize: "1.2vw",fontFamily:"arial"}}>What do you observe?</p>
 
           <Form>
             {["radio"].map((type) => (
@@ -266,7 +270,7 @@ const Feedback1 = (props) => {
         <div className="container  bg-inf d-flex  justify-content-center " style={{height:"100%"}}>
         <div className="row d-flex align-items-center">
         <div className="col d-flex flex-column border rounded-pill shadow-lg p-5">
-          <p className="text-center fw-bold" style={{fontSize: "1.2vw",fontFamily:"arial"}}>What do you observed?</p>
+          <p className="text-center fw-bold" style={{fontSize: "1.2vw",fontFamily:"arial"}}>What do you observe?</p>
           {/* <label>Last quarter Moon Neap tide? :</label> */}
           <Form>
             {["radio"].map((type) => (
@@ -314,7 +318,7 @@ const Feedback1 = (props) => {
         <div className="container  bg-inf d-flex  justify-content-center " style={{height:"100%"}}>
         <div className="row d-flex align-items-center">
         <div className="col d-flex flex-column border rounded-pill shadow-lg p-5">
-        <p className="text-center fw-bold" style={{fontSize: "1.2vw",fontFamily:"arial"}}>What do you observed?</p>
+        <p className="text-center fw-bold" style={{fontSize: "1.2vw",fontFamily:"arial"}}>What do you observe?</p>
           <Form>
             {["radio"].map((type) => (
               <div key={`inline-${type}`} className=" mb-3">
@@ -360,7 +364,7 @@ const Feedback1 = (props) => {
         <div className="container  bg-inf d-flex  justify-content-center " style={{height:"100%"}}>
         <div className="row d-flex align-items-center">
         <div className="col d-flex flex-column border rounded-pill shadow-lg p-5">
-        <p className="text-center fw-bold" style={{fontSize: "1.2vw",fontFamily:"arial"}}>What do you observed?</p>
+        <p className="text-center fw-bold" style={{fontSize: "1.2vw",fontFamily:"arial"}}>What do you observe?</p>
           <Form>
             {["radio"].map((type) => (
               <div key={`inline-${type}`} className=" mb-3">

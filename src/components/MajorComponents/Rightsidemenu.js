@@ -35,6 +35,7 @@ const Rightsidemenu = () => {
   const navigate = useNavigate();
 
   const openDialog = () => {
+    dispatch(resetAll());
     setShowDialog(true);
   };
 
@@ -60,7 +61,7 @@ const Rightsidemenu = () => {
         <Navbar key={expand} expand={expand} className="mb-3" variant="dark">
           <Container fluid className="">
             <Navbar.Brand href="#"></Navbar.Brand>
-            <Navbar.Toggle   aria-controls={`offcanvasNavbar-expand-${expand}`} onClick={()=>dispatch(resetAll())} />
+            <Navbar.Toggle   aria-controls={`offcanvasNavbar-expand-${expand}`}  />
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-${expand}`}
               aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
@@ -69,7 +70,7 @@ const Rightsidemenu = () => {
             >
               <div className="" style={{ height: "100%" }}>
                 <div
-                  className=" d-flex justify-content-center align-items-center p-3"
+                  className="d-flex justify-content-center align-items-center p-3"
                   style={{ height: "33%" }}
                 >
                   <LightTooltip title="Theory" placement="left" arrow>
@@ -85,6 +86,7 @@ const Rightsidemenu = () => {
                         }}
                         src={theory}
                         alt="Logo"
+                        onClick={()=>dispatch(resetAll())}
                       ></motion.img>
                     </Link>
                   </LightTooltip>
@@ -153,6 +155,7 @@ const Rightsidemenu = () => {
                         }}
                         src={help}
                         alt="Logo"
+                        onClick={()=>dispatch(resetAll())}
                       ></motion.img>
                     </Link>
                   </LightTooltip>

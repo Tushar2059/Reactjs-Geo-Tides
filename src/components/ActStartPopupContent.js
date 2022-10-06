@@ -2,13 +2,24 @@ import React from "react";
 import { ListItemText } from "@mui/material";
 const ActStartPopupContent = () => {
   return (
-    <div>
-      <ListItemText sx={{ display: "list-item" }}>Tides.</ListItemText>
-      <ListItemText sx={{ display: "list-item" }}>High tides.</ListItemText>
-      <ListItemText sx={{ display: "list-item" }}>low tides.</ListItemText>
+    <div style={{fontFamily:"arial",fontSize:"1.2vw"}}>
       <ListItemText sx={{ display: "list-item" }}>
-        {" "}
-        Phases of the Moon
+        We will study the different positions of moon.{" "}
+      </ListItemText>
+      <ListItemText sx={{ display: "list-item" }}>
+        We will drag the moon on the given position to see the effect on earth.
+      </ListItemText>
+      <ListItemText sx={{ display: "list-item" }}>
+        Based on the observation, we will answer the question.
+      </ListItemText>
+      <ListItemText sx={{ display: "list-item" }}>
+        We will repeat the procedure for the remaining 3 positions and observe
+        the effect to form different tides.
+      </ListItemText>
+      <ListItemText sx={{ display: "list-item" }}>
+        Using this we will learn That the combined forces of the sun and the
+        moon on Earth result in tidal ranges that vary based on the positions of
+        the three bodies.
       </ListItemText>
 
       {/* <ListItemText sx={{ display: 'list-item' }}>

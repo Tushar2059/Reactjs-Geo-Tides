@@ -22,18 +22,18 @@ const HintPopup = ({ openHintDialog,closeHintDialog }) => {
     <>
       <Dialog open={openHintDialog} TransitionComponent={Transition} >
         <DialogContent>
-          {/* <Typography>This is hint popup</Typography> */}
+          <Typography className="text-center" style={{fontSize:"1.2vw", fontFamily:"arial", fontWeight:"bold"}}>Hint</Typography>
           {(firstStore?.hintPopup)==1 && (
-            <Typography>During full moon the sun, the earth and the moon come to lie in a straight line it causes - Spring tide</Typography>
+            <Typography style={{fontSize:"1.2vw", fontFamily:"arial"}}>During full moon the sun, the earth and the moon come to lie in a straight line it causes - Spring tide</Typography>
           )}
           {(firstStore?.hintPopup)==2 && (
-            <Typography>During last quarter moon, the sun, the earth and the moon come in right angle it causes - Neap tide</Typography>
+            <Typography style={{fontSize:"1.2vw", fontFamily:"arial"}}>During last quarter moon, the sun, the earth and the moon come in right angle it causes - Neap tide</Typography>
           )}
           {(firstStore?.hintPopup)==3 && (
-            <Typography>During New moon the sun, the earth and the moon come to lie in a straight line it causes - Spring tide</Typography>
+            <Typography style={{fontSize:"1.2vw", fontFamily:"arial"}}>During New moon the sun, the earth and the moon come to lie in a straight line it causes - Spring tide</Typography>
           )}
           {(firstStore?.hintPopup)==4 && (
-            <Typography>During first quarter moon, the sun, the earth and the moon come in right angle it causes - Neap tide</Typography>
+            <Typography style={{fontSize:"1.2vw", fontFamily:"arial"}}>During first quarter moon, the sun, the earth and the moon come in right angle it causes - Neap tide</Typography>
           )}
          
           

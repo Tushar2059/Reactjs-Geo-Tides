@@ -15,7 +15,7 @@ const Instruction_1 = () => {
 const Instruction_2 = () => {
   return (
     <>
-      <p style={{fontSize: "1.2vw",fontFamily:"arial"}}> Drag the moon to see the effect of full moon on earth.</p>
+      <p style={{fontSize: "1.2vw",fontFamily:"arial"}}> Drag the moon on the marked position (+) to see the effect of full moon on earth.</p>
      
     </>
   );
@@ -45,7 +45,7 @@ const Instruction_3 = () => {
   return (
     <>
       <p style={{fontSize: "1.2vw",fontFamily:"arial"}}>
-      Drag the moon to see the effect of last quarter moon on earth.
+      Drag the moon in the last quarter on the marked position (+) to see the effect of moon on earth.
       </p>
     </>
   );
@@ -55,7 +55,7 @@ const Instruction_4 = () => {
   return (
     <>
       <p style={{fontSize: "1.2vw",fontFamily:"arial"}}>
-      Drag the moon to see the effect of new moon on earth.
+      Drag the moon on the marked position (+) to see the effect of new moon on earth.
       </p>
     </>
   );
@@ -64,7 +64,7 @@ const Instruction_4 = () => {
 const Instruction_5 = () => {
   return (
     <>
-      <p style={{fontSize: "1.2vw",fontFamily:"arial"}}>Drag the moon to see the effect of first quarter moon on earth.</p>
+      <p style={{fontSize: "1.2vw",fontFamily:"arial"}}>Drag the moon in the first quarter on the marked position (+) to see the effect of moon on earth.</p>
     </>
   );
 };

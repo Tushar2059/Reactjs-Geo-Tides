@@ -60,11 +60,21 @@ const Moonposition = (props) => {
     },500)
   },1000);
 //}
-  //window.requestAnimationFrame(toggle);
+ // window.requestAnimationFrame(toggle);
   }
  
+  // useEffect(
+  //   ()=>
+  //   {
+  //     if(moonText && count==0)
+  //     window.requestAnimationFrame(toggle);
+  //   },[]);
+
   if(moonText && count==0)
-  window.requestAnimationFrame(toggle);
+      window.requestAnimationFrame(toggle);
+
+ 
+  
  
  
 

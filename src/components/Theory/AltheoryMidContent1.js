@@ -31,7 +31,7 @@ const AltheoryMidContent1 = () => {
           </li>
         </ul>
         <p style={{ fontWeight: "bold",fontSize: "1.5vw"}}>Phases of the moon:</p>
-        <div className="d-flex justify-content-center">
+        <div className="d-flex flex-column justify-content-center align-items-center">
           <img
             className="img-fluid"
             style={{
@@ -44,6 +44,7 @@ const AltheoryMidContent1 = () => {
             src={moonphases}
             alt="Logo"
           />
+          <p style={{ fontWeight: "bold",fontSize: "1.2vw"}}>Figure 1. Positions of moon </p>
         </div>
         <p style={{ fontWeight: "bold",fontSize: "1.5vw"}}>How tides are formed ?</p>
         <ul style={{ fontSize: "1.2vw"}}>

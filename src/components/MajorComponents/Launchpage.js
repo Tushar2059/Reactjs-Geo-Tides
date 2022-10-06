@@ -46,10 +46,10 @@ const Launchpage = () => {
             style={{ height: "5vh", fontSize: "1.8vw",fontFamily: "arial", }}
           >
             {/* To verify the algebraic identity {Instru.default()} */}
-            To identify spring tides and neap tides.
+            To explain tides and their relationship with the Earth, sun, and moon.
           </div>
         </div>
-        <div className="" style={{ height: "27vh" }}>
+        <div className="" style={{ height: "23vh" }}>
           <div
             className="d-flex justify-content-center align-items-center fw-bolder"
             style={{ height: "5vh", fontSize: "2.0vw" }}
@@ -63,12 +63,11 @@ const Launchpage = () => {
             style={{ height: "15vh", fontSize: "1.5vw" }}
           >
             <div className="text-center">
-            1. Student will be able to understand types of tides. {" "}
+            <p>Student will be able to understand different types of tides and learn effect of<br></br>
+             positions of moon to form tides. </p>
             
             </div>
-            <div className="text-center">
-            2. Student will be able to understand different positions of moon.
-            </div>
+           
           </div>
         </div>
         <div
